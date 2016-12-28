@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验-lhl博客</title>
+  <title>前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验-ajax | lhl博客</title>
 
   <!-- keywords -->
   
@@ -11,12 +11,36 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lhl博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="AJAXAsynchronous Javascript And Xml
+AJAX不是一门语言, 而是对现有技术的综合利用. 本质是在HTTP协议的基础上以异步的方式与服务器进行通信
+异步 指某段程序执行时 不会阻塞 其他程序执行, 其表现形式为程序的执行顺序 不依赖程序本身的书写顺序 ,相反则为同步.
+文件传输协议
+HTTP    超文本传输协议
+FTP        文件传输协议
+SMTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="http://yoursite.com/2016/03/12/ajax请求/index.html">
 <meta property="og:site_name" content="lhl博客">
+<meta property="og:description" content="AJAXAsynchronous Javascript And Xml
+AJAX不是一门语言, 而是对现有技术的综合利用. 本质是在HTTP协议的基础上以异步的方式与服务器进行通信
+异步 指某段程序执行时 不会阻塞 其他程序执行, 其表现形式为程序的执行顺序 不依赖程序本身的书写顺序 ,相反则为同步.
+文件传输协议
+HTTP    超文本传输协议
+FTP        文件传输协议
+SMTP">
+<meta property="og:image" content="http://i.imgur.com/p0WPOo9.jpg">
+<meta property="og:updated_time" content="2016-12-28T04:49:33.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lhl博客">
+<meta name="twitter:title" content="ajax">
+<meta name="twitter:description" content="AJAXAsynchronous Javascript And Xml
+AJAX不是一门语言, 而是对现有技术的综合利用. 本质是在HTTP协议的基础上以异步的方式与服务器进行通信
+异步 指某段程序执行时 不会阻塞 其他程序执行, 其表现形式为程序的执行顺序 不依赖程序本身的书写顺序 ,相反则为同步.
+文件传输协议
+HTTP    超文本传输协议
+FTP        文件传输协议
+SMTP">
+<meta name="twitter:image" content="http://i.imgur.com/p0WPOo9.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lhl博客" type="application/atom+xml">
   
@@ -166,71 +190,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/28/hello-world/" class="article-date">
-  	<time datetime="2016-12-28T02:50:47.902Z" itemprop="datePublished">2016-12-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/28/hello-world/">
-        lhl博客
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-ajax请求" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ajax请求" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/12/ajax请求/" class="article-date">
@@ -246,15 +206,25 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/ajax请求/">
-        ajax
-        
-      </a>
+    <h1 class="article-title" itemprop="name">
+      ajax
+      
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax请求简单认识/">ajax请求简单认识</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -495,32 +465,46 @@ window.postMessage
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax请求简单认识/">ajax请求简单认识</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          lhl博客
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
 
+<div class="ds-share share" data-thread-key="ajax请求" data-title="ajax" data-url="http://yoursite.com/2016/03/12/ajax请求/"  data-images="img/dad.jpeg" data-content="ajax">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
 
 
 
 
 
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -544,8 +528,8 @@ window.postMessage
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
