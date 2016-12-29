@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验-lhl博客</title>
+  <title>前端-lhl博客</title>
 
   <!-- keywords -->
   
-    <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+    <meta name="keywords" content="前端">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
 					</div>
 				</section>
 				
@@ -776,6 +776,170 @@ window.postMessage
 <div class="counter-tag counter">
     <span id="/2016/03/12/ajax请求/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="ajax">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-移动web开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/19/移动web开发/" class="article-date">
+  	<time datetime="2016-02-19T13:50:28.000Z" itemprop="datePublished">2016-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/19/移动web开发/">
+        移动web开发
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="移动web开发"><a href="#移动web开发" class="headerlink" title="移动web开发"></a>移动web开发</h1><h2 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h2><pre><code>其实流式布局就是百分比布局，通过设置宽度百分比来自适应屏幕宽度。
+</code></pre><h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><pre><code>在移动端用来承载网页的区域，就是我们的视觉窗口（视口），这个区域可以设置宽高，缩放或者设置是否允许用户缩放
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1&quot;&gt;
+</code></pre><p><strong>设置成标准的移动开发页面</strong></p>
+<pre><code>用meta标签把viewport的宽度设为device-width，同时initial-scale=1，user-scalable = 0就构建了一个标准的移动web页面 
+</code></pre><p><strong>高清屏的问题</strong></p>
+<pre><code>在高清屏中会用两个或多个物理像素来显示实际的1px图片内容
+
+解决方案，采用压缩图标尺寸的方式来解决。 
+    如果是Img使用直接设置宽高的方式来压缩。
+    如果是背景使用的是设置background-size的方式来压缩。
+</code></pre><h2 id="移动端事件"><a href="#移动端事件" class="headerlink" title="移动端事件"></a>移动端事件</h2><p><strong>触摸事件</strong></p>
+<pre><code>Touch
+touchstart：当手指触碰屏幕时候发生。不管当前有多少只手指
+
+touchmove：当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，
+会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动
+
+touchend：当手指离开屏幕时触发
+
+touchcancel：系统停止跟踪触摸时候会触发。
+例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用
+触摸事件的响应顺序
+1、ontouchstart
+2、ontouchmove
+3、ontouchend
+
+4、onclick  300ms延时
+</code></pre><p><strong>动画及过度事件</strong></p>
+<pre><code>transitionEnd(webkitTransitionEnd)        过渡结束后触发。
+
+animationEnd(webkitAnimationEnd)        动画结束后触发
+</code></pre><p><strong>Gesture事件</strong></p>
+<pre><code>gesturestart
+当一个手指触摸屏幕之后，第二个手指再触摸屏幕时触发。
+gesturechange
+当上面的事件触发后立即触发。
+gestureend
+第二根手指离开屏幕时触发，之后将不会再次触发gesturechange。
+
+在event当中会返回另外两个参数
+scale 根据两个手指的滑动距离计算的缩放比例 初始1
+rotation根据两个手指的滑动距离计算的旋转角度 初始 0
+</code></pre><p><strong>事件对象</strong></p>
+<pre><code>originalEvent  是jquery 封装的事件。
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+注意：在touchend事件的时候event只会记录changedtouches
+</code></pre><h2 id="常见css属性"><a href="#常见css属性" class="headerlink" title="常见css属性"></a>常见css属性</h2><pre><code>全屏单页面布局    html,body{ height: 100%; }
+
+点击高亮效果        -webkit-tap-highlight-color:transparent;/*清除点击高亮效果*/
+
+边框盒子            -webkit-box-sizing: border-box; box-sizing: border-box;
+
+Input清除默认的样式 -webkit-appearance: none;
+
+最小宽度和最大宽度的限制 
+    max-width: 640px;  /*在行业当中的移动端的设计图一般使用的是640px*/
+    min-width: 300px;  /*在移动设备当中现在最小的尺寸320px*/
+
+    适用：图片比较多的首页，门户，电商 等。
+    作用  保证页面在尺寸比较大的设备当中保证页面的效果也就是清新度
+    保证页面在小尺寸的设备当中有较好的布局效果。
+
+键盘适配 tel search email
+
+移动事件：在移动端是利用transform来做定位。
+    1. 使用 margin/top 修改會觸發 reflow，拖慢速度。
+    2. absolute 和 fixed 的元素的 reflow 不會牽動整體，但依舊不如 transform 只需要 repaint。
+    3. 而 translate 和 translate3d 的區別則在於硬件加速。
+
+按钮优化方式：padding加背景裁切clip：content
+</code></pre><h2 id="事件封装"><a href="#事件封装" class="headerlink" title="事件封装"></a>事件封装</h2><p>Tap：<br>    由于在移动端click会有300ms左右的延时，为了响应速度更快移动端框架一般会封装一个加tap的事件，原理：利用touch事件当没有滑动过并且响应时间在一定的时间内（比click快）那么这样的一个过程就是一个tap事件。</p>
+<p>Swipe：<br>    在移动端有手势事件，也是一些移动端框架封装出来的那么这种事件也是touch事件开始的位置和结束的位置来判断手势的情况。是向下滑还是向右滑，是向下滑还是向上滑。</p>
+<p><strong>移动端框架</strong></p>
+<pre><code>Zepto： 轻量级、依赖自选插件
+</code></pre><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p><strong>首页的适用场景</strong> </p>
+<pre><code>门户电商的首页   而且内容比较丰富  
+</code></pre><p><strong>分类页面的使用场景</strong></p>
+<pre><code>是单页面  全屏的布局当中会使用
+异步的交互  ajax    web app 的开发模式当中会使用到
+Web  app  网页程序 网页应用
+移动web页面优点： 跨平台  android  ios
+
+Hybird app 现在流行起来的  混合应用  开发模式 
+套用  嵌入 移动web页面的 应用所有的移动页面都可以
+
+Native  app 原生应用
+</code></pre><p><strong>购物车页面</strong></p>
+<pre><code>任何地方都可以用到这样的布局。
+</code></pre><p>*<img src="http://i.imgur.com/6vJajfW.png" alt="两栏自适应布局原理"></p>
+<pre><code>那么当文本在另一个容器当中，容器是overflow：hidden的时候。那么这个时候这个盒子就变成了一个绝缘的盒子，不去影响任何外部的元素并且内容使用剩余的宽度。
+
+这样也可是做一个自适应的两栏布局方式。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/02/19/移动web开发/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="移动web开发">
          &nbsp;
         view
     </span>
