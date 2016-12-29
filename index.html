@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/响应式开发一些思路/" style="font-size: 10px;">响应式开发一些思路</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
 					</div>
 				</section>
 				
@@ -171,6 +171,165 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/28/响应式开发/" class="article-date">
+  	<time datetime="2016-12-28T08:48:11.000Z" itemprop="datePublished">2016-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/28/响应式开发/">
+        &#39;响应式开发&#39;
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/28/响应式开发/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="&#39;响应式开发&#39;">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-cookie-session-localStorage区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/29/cookie-session-localStorage区别/" class="article-date">
+  	<time datetime="2016-08-29T13:28:23.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/29/cookie-session-localStorage区别/">
+        cookie,session,localStorage区别
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cookie-，session-和localStorage的区别"><a href="#cookie-，session-和localStorage的区别" class="headerlink" title="cookie ，session 和localStorage的区别"></a>cookie ，session 和localStorage的区别</h1><blockquote>
+<p>cookie:名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围,如果不设过期时间那么，那么cookie表示是在会话时间，当浏览器关闭就没有了，并不会保存到内存中.单如果设了过期时，浏览器会把cookie保存到硬盘中。</p>
+<p>session:sessio是一种服务器机制，当要创建一个session时候，服务器会先创建一个session id的标识。用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中</p>
+<h3 id="实际上大多数的应用都是用-Cookie-来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在-Cookie-里面记录一个Session-ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。但是如果cookie被禁用了，那么可以利用URL后面添加参数的方式来告诉服务器识别用户。"><a href="#实际上大多数的应用都是用-Cookie-来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在-Cookie-里面记录一个Session-ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。但是如果cookie被禁用了，那么可以利用URL后面添加参数的方式来告诉服务器识别用户。" class="headerlink" title="实际上大多数的应用都是用 Cookie 来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在 Cookie 里面记录一个Session ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。但是如果cookie被禁用了，那么可以利用URL后面添加参数的方式来告诉服务器识别用户。"></a>实际上大多数的应用都是用 Cookie 来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在 Cookie 里面记录一个Session ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。但是如果cookie被禁用了，那么可以利用URL后面添加参数的方式来告诉服务器识别用户。</h3><h2 id="cookie和session的区别"><a href="#cookie和session的区别" class="headerlink" title="cookie和session的区别"></a>cookie和session的区别</h2><ul>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上</li>
+<li>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗，考虑到安全应当使用session。</li>
+<li>session会在一定时间来保存在服务器上。当访问增多了，会占用服务器的性能。考虑到减轻服务器性能方面，应当使用cookie.</li>
+<li>cookie 保存的数据不能超过4k，很多浏览器都会限制一个占点最多保存20个cookie。</li>
+<li>所以建议： 登录信息一般存放在session,其他信息保留咋cookie</li>
+<li>session 保存在服务器中，客户端不知道其中的信息，cookie保存在客户端，服务器能够知道其中的信息。</li>
+<li>session中保存的是对象，cookie保存是字符串</li>
+<li>session不能区分路径，同一个用户在一个网站期间，所以的session在任何一个地方都可以访问到。而如果设置参数，那么同一个网站不同路径下cookie互相访问不到的<h2 id="web-storage和cookie"><a href="#web-storage和cookie" class="headerlink" title="web storage和cookie"></a>web storage和cookie</h2>sessionStroge 和localStorag，cookie都是在浏览器端存储数据的，其中sessionStoage是在同源的同窗口中。始终存在的数据。就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage即被销毁。而localStorage是始终保存在浏览器中。除非自己删除。<h4 id="web-Storage带了好处"><a href="#web-Storage带了好处" class="headerlink" title="web Storage带了好处"></a>web Storage带了好处</h4></li>
+</ul>
+<ol>
+<li>减少流浪：一旦数据保存在本地以后，就可以避免在向服务器请求数据，因此减少不必要数据请求。减少数据不必要的来回的传递。</li>
+<li>快速的显示数据;性能好，从本地读数据比通过服务器获得快。本地数据可以即时获得。再加上页面本身也可以有缓存，页面可以加快显示速度。</li>
+<li>临时存储：有很多数据只需要用户浏页面期间使用，关闭窗口后数据就丢失，这时候用sessiStorage很方便。</li>
+</ol>
+</blockquote>
+<p><strong>sessionStorage 、localStorage 和 cookie 之间的区别</strong></p>
+<pre><code>共同点：都是保存在浏览器端，且同源的。
+区别：
+    1.cookie数据始终子啊同源的http携带，cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存
+    2.存储大小限制也不同，cookie数据不能超过4k，sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
+    3 数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。
+    4 作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。
+    5
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie-session-localStorage/">cookie session localStorage</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/08/29/cookie-session-localStorage区别/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="cookie,session,localStorage区别">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-重绘重排" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -246,146 +405,6 @@ document.getElementById(&apos;fruit&apos;).appendChild(fragment);
 <div class="counter-tag counter">
     <span id="/2016/05/20/重绘重排/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="&#39;重绘重排&#39;">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/13/响应式开发/" class="article-date">
-  	<time datetime="2016-04-13T11:16:47.000Z" itemprop="datePublished">2016-04-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/13/响应式开发/">
-        响应式开发
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="响应式开发"><a href="#响应式开发" class="headerlink" title="响应式开发"></a>响应式开发</h1><p><strong>什么是响应式开发</strong>：可以响应不同的布局。</p>
-<p>a)    在移动互联日益成熟的时候，桌面浏览器上开发的网页已经不能满足移动端的设备的展示和阅读<br>b)    之前，通常的做法是对移动端单独开发一套特定的版本<br>c)    但是，如果移动终端设备起来越多的时候赋发成本太大，是因为需要做所有屏幕的适配<br>d)    响应式开发的目的就是:一个网站能够兼容多种终端<br>e)    在新建的网站上一般都会使用响应式开发<br>f)    移动web开发和响应式开发是必须具备的技能<br>g)    演示响应者页面</p>
-<p>为什么说是大势所趋呢？</p>
-<p>现在的移动设备屏幕越来越大。<br>越来越多的设计师也采用了这种设计。<br>在新建站的一些网站现在普遍采用的响应式开发。</p>
-<p><img src="http://i.imgur.com/iwoXZpa.png" alt="2. 响应式开发和移动web开发的区别"></p>
-<p><strong>响应式开发的原理</strong>：媒体查询：</p>
-<pre><code>a)    查询媒介，查询到当前屏幕的宽度，针对不同的屏幕宽度设置不同的样式来适应不同屏幕。
-    当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。
-    简单说，你可以设置 不同屏幕下面的不同的样式，达到适配不同的屏幕的目的。
-
-b)    实现方式：通过查询screen的宽度来指定某个宽度区间的网页布局。 
-    超小屏幕    （移动设备）768px以下 
-    小屏设备    768px-992px         768 &lt;= w &lt;992
-    中等屏幕    992px-1200px      992 =&lt; w &lt;1200
-    宽屏设备    1200px以上      &gt;=1200
-</code></pre><p><strong>媒体查询的基本实现方式</strong>：常用属性设置: <a href="http://www.runoob.com/cssref/css3-pr-mediaquery.html" target="_blank" rel="external">http://www.runoob.com/cssref/css3-pr-mediaquery.html</a></p>
-<p>a)    CSS 语法<br>    @media mediatype and|not|only (media feature) {<br>        CSS-Code;<br>    }</p>
-<p><strong>你也可以针对不同的媒体使用不同</strong> stylesheets :<br>    <link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css"></p>
-<p>b)    媒体类型</p>
-<pre><code>值                描述
-all                用于所有设备
-print            用于打印机和打印预览
-screen            用于电脑屏幕，平板电脑，智能手机等。
-speech            应用于屏幕阅读器等发声设备
-</code></pre><p>c)    媒体功能</p>
-<pre><code>值                        描述
-device-height            定义输出设备的屏幕可见高度。
-device-width                定义输出设备的屏幕可见宽度。
-max-device-height        定义输出设备的屏幕可见的最大高度。
-max-device-width            定义输出设备的屏幕最大可见宽度。
-min-device-width            定义输出设备的屏幕最小可见宽度。
-min-device-height        定义输出设备的屏幕的最小可见高度。
-max-height                定义输出设备中的页面最大可见区域高度。
-max-width                定义输出设备中的页面最大可见区域宽度。
-min-height                定义输出设备中的页面最小可见区域高度。
-min-width                定义输出设备中的页面最小可见区域宽度。
-</code></pre><h2 id="Bootstrap框架"><a href="#Bootstrap框架" class="headerlink" title="Bootstrap框架"></a>Bootstrap框架</h2><p><a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap</a>简介：当前最流行的前端UI框架(有预制界面组件), Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目</p>
-<pre><code>1. Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷
-
-2. Bootstrap是基于HTML5和CSS3开发的，它在jQuery的基础上进行了更为个性化和人性化的完善，形成一套自己独有的网站风格，并兼容大部分jQuery插件
-</code></pre><p>为什么 使用Bootstrap:</p>
-<pre><code>1. 有自己的生态圈，不断的更新迭代
-2. 提供一套简洁，直观，强悍的组件
-3. 标准化的html+css编码规范
-4. 让开发更简单，提高了开发效率
-5. 可以进行自定义扩展
-</code></pre><p>BootStrap的版本了解</p>
-<pre><code>1. 2.x.x:兼容性好  / 代码不够简洁，功能不够完善
-2. 3.x.x:稳定性好,放弃了IE6-IE7,对IE8的支持一般 /偏向于响应式布局开发，移动设备优先的web项目开发
-3. 4.x.x:测试阶段，偏向于响应式，移动设备
-</code></pre><p><strong>框架使用</strong></p>
-<ol>
-<li>模板</li>
-<li>全局样式</li>
-<li>容器<ol>
-<li>.container</li>
-<li>.container-fulid        100%</li>
-</ol>
-</li>
-<li>栅格系统<ol>
-<li>row </li>
-<li>column<br><img src="http://i.imgur.com/Y6pehpM.png" alt="栅格系统"><ul>
-<li>栅格系统的意义：移动设备和桌面屏幕：它可以规范在不同尺寸的屏幕下，当前的列占据的宽度。或者说一行可以放置几个列。</li>
-<li>栅格系统是往上兼容的：意味着小屏幕上的效果在大屏幕上也是可以正常显示的人，但是大屏幕上的设置在小屏幕上却无法正常显示。</li>
-<li>Row可以再次嵌套在列中。如果不能填满整列，则默认从左排列，如果超出，则换行展示</li>
-</ul>
-</li>
-<li>嵌套列</li>
-<li>列偏移</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发一些思路/">响应式开发一些思路</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/04/13/响应式开发/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="响应式开发">
          &nbsp;
         view
     </span>
