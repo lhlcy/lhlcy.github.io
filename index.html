@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
 					</div>
 				</section>
 				
@@ -171,6 +171,197 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/05/gulp/" class="article-date">
+  	<time datetime="2016-12-05T08:20:02.000Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/05/gulp/">
+        gulp
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="gulp自动化打包"><a href="#gulp自动化打包" class="headerlink" title="gulp自动化打包"></a>gulp自动化打包</h1><h3 id="首先引入gulp文件require-39-gulp-39"><a href="#首先引入gulp文件require-39-gulp-39" class="headerlink" title="首先引入gulp文件require(&#39;gulp&#39;)"></a>首先引入gulp文件<code>require(&#39;gulp&#39;)</code></h3><blockquote>
+<p>在gulp中，都是通过任务来实现的相对应的操作，task（）</p>
+<p>第一个参数表示：当前任务的名称。想要执行这个任务只需要gulp</p>
+<p>第二个参数表示：当前任务的依赖项，数组</p>
+<p>第三个参数表示：是一个回调函数，任务代码就放在这个函数中</p>
+</blockquote>
+<h2 id="引入压缩模块"><a href="#引入压缩模块" class="headerlink" title="引入压缩模块"></a>引入压缩模块</h2><p><strong>js压缩（gulp-uglify）</strong></p>
+<pre><code>gulp.task(&apos;js&apos;, function() {
+// src 方法，用来获取到要操作的文件
+gulp.src(&apos;src/index.js&apos;)
+    .pipe(uglify())
+    // pipe 让获取到的文件，沿着管道流动
+    // dest 作用：指定文件的输入目录，会帮我们创建文件
+    .pipe( gulp.dest(&apos;dist/&apos;) )
+    // 告诉 browserSync 来同步文件的变化
+    .pipe(browserSync.reload({stream: true}));
+});
+</code></pre><p><strong>es6的js压缩</strong></p>
+<pre><code>babel-preset-es2015
+gulp-babel(es6转es5语法)
+gulp-uglify(文件压缩)
+
+一定要先转换,再压缩
+   const minjs = require(&apos;gulp-uglify&apos;);
+   const es6toes5 = require(&apos;gulp-babel&apos;);
+   gulp.task(&apos;minjs&apos;,()=&gt;{
+
+       gulp.src([&apos;需要转换的js源文件&apos;],{base:&apos;src&apos;})
+       .pipe(es6toes5({presets: [&apos;es2015&apos;]})) //表示将 js文件由es6转换成es5
+       .pipe(minjs()) //再来压缩就不会报错了
+       .pipe(gulp.dest(&apos;dist&apos;));
+
+       console.log(&apos;js压缩完毕&apos;);
+   });
+</code></pre><p><strong>css压缩和并（gulp-cssnano，gulp-concat）</strong></p>
+<pre><code>var cssnano = require(&apos;gulp-cssnano&apos;);
+// 引入 concat 合并文件
+var concat = require(&apos;gulp-concat&apos;);
+
+gulp.task(&apos;css&apos;, function() {
+gulp.src(&apos;src/css/*.css&apos;)
+    // 合并文件
+    .pipe(concat(&apos;all.css&apos;))
+    // 压缩css
+    .pipe(cssnano())
+    .pipe(gulp.dest(&apos;dist/css&apos;))
+    .pipe(browserSync.reload({stream: true}));
+});
+</code></pre><p><strong>将less转化成css(gulp -less)</strong></p>
+<pre><code>// 引入 less 将less转化为css
+var less = require(&apos;gulp-less&apos;);
+gulp.task(&apos;less&apos;, function() {
+    gulp.src(&apos;src/css/less-demo.less&apos;)
+        .pipe(less())
+        .pipe(gulp.dest(&apos;dist/css&apos;))
+        .pipe(browserSync.reload({stream: true}));
+});
+</code></pre><p><strong>css的压缩及md5化</strong></p>
+<pre><code>const rev = require(&apos;gulp-rev&apos;);
+const mincss = require(&apos;gulp-clean-css&apos;);
+
+gulp.task(&apos;mincssandcssmd5&apos;,()=&gt;{
+gulp.src([&apos;./src/statics/css/*.css&apos;],{base:&apos;src&apos;})
+.pipe(rev())
+.pipe(mincss({compatibility: &apos;ie8&apos;}))
+.pipe(gulp.dest(&apos;dist&apos;))
+.pipe(rev.manifest())
+.pipe(gulp.dest(&apos;./src/rev&apos;));
+
+console.log(&apos;css压缩完毕&apos;);
+});
+
+替换html中引用了css的路径,并且本身Html也得压缩
+
+const revCollector = require(&apos;gulp-rev-collector&apos;);  //替换静态资源文件名称插件
+const htmlmin = require(&apos;gulp-htmlmin&apos;);
+
+gulp.task(&apos;htmlminandreplaceurlname&apos;,()=&gt;{
+gulp.src([&apos;./src/rev/*.json&apos;,&apos;./src/views/*.html&apos;],{base:&apos;src&apos;})
+.pipe(revCollector())
+.pipe(htmlmin({collapseWhitespace: true}))
+.pipe(gulp.dest(&apos;dist&apos;));;
+});
+</code></pre><p><strong>引入html压缩（gulp-htmlmin）</strong></p>
+<pre><code>var htmlmin = require(&apos;gulp-htmlmin&apos;);
+gulp.task(&apos;html&apos;, function() {
+    gulp.src(&apos;src/index.html&apos;)
+        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
+        .pipe(gulp.dest(&apos;dist/&apos;))
+        .pipe(browserSync.reload({stream: true}));
+});
+</code></pre><p><strong>图片压缩gulp-imagemin</strong></p>
+<pre><code>var imagemin = require(&apos;gulp-imagemin&apos;)
+gulp.task(&apos;img&apos;, function() {
+    gulp.src(&apos;src/imgs/*.*&apos;)
+        .pipe(imagemin())
+        .pipe(gulp.dest(&apos;dist/img&apos;))
+        .pipe(browserSync.reload({stream: true}));
+});
+</code></pre><p><strong>引入 browser-sync 浏览器同步刷新</strong></p>
+<pre><code>var browserSync = require(&apos;browser-sync&apos;).create();
+
+gulp.task(&apos;bs&apos;, function() {
+    browserSync.init({
+            // 指定服务器的根目录
+      server: {
+          baseDir: &apos;./dist&apos;
+      }
+  });
+});
+</code></pre><p><strong>利用watch来监控</strong></p>
+<pre><code>gulp.task(&apos;watch&apos;, [&apos;bs&apos;], function() {
+
+    // 监视文件的变化
+    // 第一个参数u：表示要监视的文件
+    // 第二个参数u：表示监视到变化后，要执行的任务
+    gulp.watch(&apos;src/index.html&apos;, [&apos;html&apos;]);
+    gulp.watch(&apos;src/index.js&apos;, [&apos;js&apos;])
+    gulp.watch(&apos;src/css/*.css&apos;, [&apos;css&apos;])
+    gulp.watch(&apos;src/css/*.less&apos;, [&apos;less&apos;])
+});
+</code></pre><p><strong>默认执行 default 任务</strong></p>
+<p>gulp.task(‘default’, [‘js’, ‘css’, ‘less’, ‘html’, ‘watch’])</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp-自动化打包工具/">gulp 自动化打包工具</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/05/gulp/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="gulp">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-cookie-session-localStorage区别" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -967,7 +1158,7 @@ Native  app 原生应用
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2016 lhl
+        &copy; 2017 lhl
       </div>
         <div class="footer-right">
           <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
