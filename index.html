@@ -75,6 +75,11 @@
 						</div>
 						
 						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
 					</div>
 					
 				</div>
@@ -86,6 +91,8 @@
 						
 						<li>友情链接</li>
 						
+						
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -114,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/c33-动画-样式/" style="font-size: 10px;">c33 动画  样式</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/html5-标签/" style="font-size: 10px;">html5 标签</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
 					</div>
 				</section>
 				
@@ -129,6 +136,12 @@
 				</section>
 				
 
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">true</div>
+				</section>
 				
 			</div>
 		</div>
@@ -1131,6 +1144,758 @@ Native  app 原生应用
 <div class="counter-tag counter">
     <span id="/2016/02/19/移动web开发/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="移动web开发">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-h5总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/05/h5总结/" class="article-date">
+  	<time datetime="2015-12-05T08:44:12.000Z" itemprop="datePublished">2015-12-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/05/h5总结/">
+        h5总结
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><pre><code>新一代web富客户端整体解决方案, 能做很好看的网页 PC,APP,weiChat端应用程序 一些游戏 
+
+声明格式:&lt;!doctype html&gt;
+</code></pre><p><strong>语义化</strong></p>
+<h2 id="新的特殊内容元素"><a href="#新的特殊内容元素" class="headerlink" title="新的特殊内容元素"></a>新的特殊内容元素</h2><pre><code>H5标签在IE8以下有兼容性问题:可以用html5shiv框架去解决;
+cc:ie6
+用div 还是html5的标签 看你自己 （保证用新的不会有问题）（看同事）
+</code></pre><p><strong>结构元素</strong></p>
+<pre><code>- header        
+- nav 导航链接    
+- aside 附属信息    
+- section 分块        
+- article 文档独立部分    
+- footer 
+</code></pre><p><strong>分组元素</strong></p>
+<pre><code>- figure 和 figcaption
+        定义独立的流内容    
+- hgroup
+        用于将多个标题组成一个标题组, 经常与h1~6组合使用, 放在header中.    
+- hgroup 与 figcaption 组合使用
+</code></pre><p><strong>页面交互元素</strong></p>
+<pre><code>- details 和 summary    
+        组合使用,当用户单击summary时,显示或隐藏details    
+- progress    
+        完成进度条:&lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;    
+- meter    
+        用于表示指定范围内的数值,进度条
+        &lt;meter value=&quot;85&quot; min=&quot;0&quot; max=&quot;100&quot; low=&quot;60&quot; high=&quot;80&quot; title=&quot;65分&quot; optimum=&quot;100&quot;&gt;65分&lt;/meter&gt;
+</code></pre><p><strong>文本层次语义元素</strong></p>
+<pre><code>- time 定义时间, 没有样式显示, 有助于机器识别 
+- mark 高亮显示, 更随意灵活
+- cite 引用标记
+</code></pre><p><strong>全局属性</strong></p>
+<pre><code>- draggable:true/false 定义元素是否可以拖动
+- hidden:true/false
+- spellcheck:true/false 输入框等拼写检查
+- contenteditable 是否可编辑
+</code></pre><h2 id="新的表单控件"><a href="#新的表单控件" class="headerlink" title="新的表单控件"></a>新的表单控件</h2><pre><code>键盘适配
+- calendar
+- date    
+- time    
+- image: 图像形式的提交按钮     
+- email    
+- url    
+- tel    
+- number    
+- search
+</code></pre><h2 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h2><pre><code>- placeholder    占位符    
+- autofocus        自动获得焦点    
+- multiple        多文件上传    
+- required        必填项    
+- pattern        自定义验证
+</code></pre><h2 id="用于绘画的canvas元素"><a href="#用于绘画的canvas元素" class="headerlink" title="用于绘画的canvas元素"></a>用于绘画的canvas元素</h2><h2 id="用于媒介回放的video和audio元素"><a href="#用于媒介回放的video和audio元素" class="headerlink" title="用于媒介回放的video和audio元素"></a>用于媒介回放的video和audio元素</h2><p><strong>音频</strong></p>
+<pre><code>&lt;audio src=&quot;&quot; controls autoplay loop&quot;&gt;
+    &lt;source src=&quot;&quot;&gt;        //    备用格式
+    &lt;source src=&quot;&quot;&gt;
+&lt;/audio&gt;
+</code></pre><p><strong>视频</strong></p>
+<pre><code>&lt;video src=&quot;&quot; width=&quot;1000&quot;(占据尺寸拉伸,视频不会被拉伸) height=&quot;200&quot;&gt;
+&lt;/video&gt;
+</code></pre><p><strong>API</strong>    </p>
+<pre><code>方法:    
+        load()        // 
+        play()        //    播放
+        pause()        // 暂停
+属性:
+        currentSrc    //    获取路径
+        currentTime    //    获取播放的时间
+        duration    //    媒体总时间
+事件:    
+        ontimeupdate    //    播放时重复触发    
+        onended            //    结束时触发
+</code></pre><h2 id="H5-DOM扩展"><a href="#H5-DOM扩展" class="headerlink" title="H5 DOM扩展"></a>H5 DOM扩展</h2><p><strong>获取元素</strong></p>
+<pre><code>一般用于移动端(不引用某库的时候):    
+
+document.querySelector(&quot;.item&quot;);    一般用来获取id
+
+document.querySelectorAll(&quot;.item&quot;);
+</code></pre><p><strong>事件监听</strong></p>
+<pre><code>addEventLinstener(&quot;click&quot;,function,false/true);
+</code></pre><p><strong>类名操作</strong></p>
+<pre><code>ele.classList    该类名的集合
+ele.classList.remove(&apos;active&apos;);        删除
+ele.classList.add(&apos;active&apos;);        添加
+ele.classList.toggle(&apos;active&apos;);        切换
+ele.classList.contains(&apos;active&apos;)    查询:返回boolean值
+</code></pre><p><strong>自定义属性</strong>    </p>
+<pre><code>用来定义一些和DOM强相关的数据, 一般用在一些JS特效 tab栏 轮播图 
+    可以降低DOM之间的关联 降低耦合度
+    写法 是data-属性名
+
+&lt;a href=&quot;&quot; data-target=&quot;#target&quot;&gt;
+
+获取自定义属性:
+ele.getAttribute(&quot;&quot;);            效率低
+ele.dataset[&quot;data-target&quot;];        获取不到/
+ele.dataset[&quot;target&quot;];            H5方式, 不需要data-了 效率高
+
+jQuery方法是ele.da
+</code></pre><hr>
+<p>ta(“”);</p>
+<h2 id="新增API"><a href="#新增API" class="headerlink" title="新增API"></a>新增API</h2><p><strong>网络状态:</strong></p>
+<pre><code>window.online;        网络连接时调用
+window.offline;        网络断开时调用
+</code></pre><p><strong>全屏:</strong>    </p>
+<pre><code>node.requestFullScreen();    开启全屏显示
+node.cancelFullScreen();    关闭全屏显示
+兼容性问题:
+node.webkitRequestFullScreen();
+node.webkitCancelFullScreen();
+    node.webkitIsFullScreen();
+
+node.mozRequestFullScreen;
+node.mozCancelFullScreen;
+    node.mozFullScreen();
+
+全屏伪类选择器
+:full-screen .box {}、:-webkit-full-screen {}、:moz-full-screen {}
+</code></pre><p><strong>拖拽:</strong>    八大事件 重点(dragstart dragover drop)</p>
+<pre><code>拖拽物事件:
+&lt;div draggable=&quot;true&quot;&gt;&lt;/div&gt;
+div.addEventListener(&quot;drag&quot;,function(){})            拖拽中重复触发
+div.addEventListener(&quot;dragstart&quot;,function(){})        开始时触发一次
+div.addEventListener(&quot;dragleave&quot;,function(){})        拖拽中鼠标移出原范围是触发;
+div.addEventListener(&quot;dragend&quot;,function(){})        结束时触发一次
+
+
+目标物事件:
+target.addEventListenr(&quot;dragenter&quot;,function(){})    鼠标移入目标范围时触发
+target.addEventListenr(&quot;dragover&quot;,function(){})        鼠标在目标范围内是重复触发
+target.addEventListenr(&quot;dragleave&quot;,function(){})    鼠标离开目标范围时触发一次
+target.addEventListenr(&quot;drop&quot;,function(e){            在目标范围内松开鼠标时触发
+    不能直接触发, 需要在拖拽过程中阻止拖拽的默认事件.
+    e.preventDefault(); // 阻止默认事件
+    e.dataTransfer.getData(&apos;Text&apos;);
+    e.dataTransfer.getData(&apos;Text/uri-list&apos;);        只能获得图片地址
+    do();
+})    
+div不能直接拖拽:
+    1. div添加draggable属性
+    2. div.dragstart设置event.dataTransfer.setData(key,div.id);
+    3. target.drop事件 
+        var id = e.dataTransfer.getData(key); 
+        target.appendChild(document.querySelector(id))
+
+    1. div默认不可以拖拽,需要设置draggable=&quot;true&quot;;
+    2. 给目标注册drop事件,松开时把div添加到目标物里面
+    3. drop事件默认不可触发,需要在dragover中阻止默认行为
+    4. div默认不可拖拽,所以dataTransfer里面获取不到div的相关信息
+    5. 就需要在div开始拖拽的时候给dataTransfer属性里面设置值(选择器)dataTransfer.setData(key,value);
+    6. 在drop事件里面通过getData获取value,根据选择器获取到div元素,然后追加到目标中
+</code></pre><p><strong>文件:</strong></p>
+<pre><code>1. file 对象 在拖拽文件的时候e.dataTransfer.files[0]; 然后 input:file里面选择的文件也是file对象
+2. fileReader实例 var reader = new fileReader(); 
+3. 使用reader实例去读取文件 读取的方式有3种;
+4. 读取的时候需要添加一个load读取完成事件才能拿到读取的结果 reader.result属性里面
+
+var file = e.dataTransfer.files[0];    // 不加索引时,获得 FileList 文件集合数组对象 可用于多文件事件
+
+FileReader 对象;
+var reader = new FileReader;     //    实例化对象;
+
+reader.readAsText(file);        //    读文本
+reader.readAsDataURL(file);        //    读文件    需加入到对应标签内;
+reader.readAsBinaryString(file);    // 二进制格式
+
+reader.addEventListener(&apos;load&apos;,function(){
+    target.innerHTML += reader.result;}
+</code></pre><p><strong>地理位置:</strong></p>
+<pre><code>1. 什么是地理定位: 就是获取你当前的位置
+2. 为什么要学习地理定位: 可以做一些地图,或者购物设置收获地址,天气等等需要地址的地方等等
+3. 如何学习地理定位:
+    1. 获取当前位置API
+        - navigator.geolocation.getCurrentPosition(callback)
+        - 成功获取地理信息后,会调用successCallback,并返回包含位置信息的对象.
+    2. 重复获取当前位置
+        - navigator.geolocation.watchPosition(callback)
+    3. 事件对象position对象
+        - position.coords.latitude 纬度
+        - position.coords.longitude 经度
+4. 总结: 应用在一些地图 ,导航 天气等等一些地方 ,可以搭配百度地图做出很多功能
+
+百度地图API:
+var map = new BMap(&apos;allmap&apos;);    // 创建Map实例
+map.centerAndZoom(new BMap.Point(113.90,22.57),20);    // 初始化地图
+map.addControl(new BMap.MapTypeControl());            // 添加地图类型控件
+map.setCurrentCity(city);                            // 设置地图显示的城市,必须
+map.enableScrollWheelZoom(true);                    // 开启鼠标滚轮缩放
+
+navigator.geolocation.watchPosition(successCallback,errorCallback,options)
+成功获取地理信息后,会调用successCallback,并返回包含位置信息的对象.
+</code></pre><p><strong>离线存储:</strong></p>
+<pre><code>1. 什么是web存储: localStorage 本地存储 ,sessionStorage 会话存储
+    可以存储一些网页上需要的数据
+2. 为什么要学习web存储: 可以用来存储网页上的数据 要用到的时候直接渲染到页面上 提升网站性能,做到一些缓存的效果
+
+3. 以后开发中一般用来存储一些不是很重要的用户信息,或者一些网站里面比较固定的内容 方便后续网站打开的速度,减轻服务器压力
+
+永久存储:localStorage: 20M
+window.localStorage.setItem(key,value);
+window.localStorage.getItem(key);
+window.localStorage.removeItem(key);
+window.localStorage.clear();
+
+临时存储session:        5M        关闭浏览器清除
+window.sessionStorage.setItem(key,value);
+window.sessionStorage.getItem(key);
+window.sessionStorage.removeItem(key);
+window.sessionStorage.clear();
+</code></pre><p><strong>appCache 应用缓存</strong></p>
+<pre><code>H5中我们可以轻松构建一个离线应用,只需要创建一个cache manifest文件
+应用缓存: 就是可以实现无网络状态访问一个应用或者一个网站
+优势:
+    1. 可配置需要缓存的资源
+    2. 网络无连接时应用仍可用
+    3. 本地读取缓存资源,提升访问速度,增强用户体验
+    4. 减少请求,缓解服务器负担
+
+编写:
+1. 设置缓存清单文件
+    1. 在页面的html 节点添加&lt;html lang=&quot;en&quot; manifest=&quot;cache.manifest&quot;&gt; 保证文件在网页的旁边
+2. manifest文件格式
+    1. 顶部写 CACHE MANIFEST
+    2. version: 1.0.0 指定缓存的版本 一旦版本更改了浏览器可以重新缓存 ,可以实现缓存的同步更新
+    3. CACHE: 换行 tab 指定需要缓存的静态资源 如.css .js .html等
+    4. NETWORK: 换行 tab 指定需要在线访问的资源 ,可使用通配符 * 等等
+    5. FALLBACK: 换行 tab 当被缓存的文件找不到的备用资源
+
+        CACHE MANIFEST
+
+        # 注释内容
+
+        version: 1.0.3
+        # CACHE: 一定要记得带:冒号
+        CACHE:
+            index.html
+            css/style.css
+            js/index.js
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5-标签/">html5 标签</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2015/12/05/h5总结/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="h5总结">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-css3入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/05/css3入门/" class="article-date">
+  	<time datetime="2015-12-05T05:45:04.000Z" itemprop="datePublished">2015-12-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/05/css3入门/">
+        css3入门
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><pre><code>浏览器支持程度差, 移动端支持优于PC端
+考虑用户群体, 遵照产品方案
+</code></pre><p><strong>浏览器兼容:</strong></p>
+<pre><code>-webkit-:Safari and Chrome 兼容前缀
+-ms-:IE9
+-moz-:Firefox
+-o-:Opera
+
+通过    http://caniuse.com/    可查询各特性的支持程度, 一般兼容性处理的方法是添加私有前缀, 如不能解决, 应避免使用, 无需刻意去处理css3的兼容性问题.
+</code></pre><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>- (E)[att]            存在该属性即可            
+- (E)[att=value]        属性值完全等于value
+- (E)[att^=value]    
+    p[id^=&quot;one&quot;] id包含前缀为one的元素
+
+- (E)[att$=value]
+    p[id$=&quot;one&quot;] id包含后缀为one的元素
+
+- (E)[att~=value]
+    p[id~=&quot;one&quot;] id属性值为多个,其中一个等于one的元素
+
+- (E)[att*=value]    
+    p[id*=&quot;one&quot;] id包含one的元素
+
+- (E)[att|=value]    
+    p[id|=&quot;one&quot;] id包含以one开头,并用连字符&apos;-&apos;分隔的元素,如果仅为one,也会被选中
+</code></pre><h3 id="关系选择器"><a href="#关系选择器" class="headerlink" title="关系选择器"></a>关系选择器</h3><pre><code>- 子代选择器 
+    p -  span 选择第一级子元素
+
+- 兄弟选择器
+    + 临近兄弟选择器
+    ~ 普通兄弟选择器
+
+- 结构化伪类选择器
+    :root                     匹配文档根元素
+    :only-child 
+    :first-child 
+    :last-child 
+    :nth-child(2n+1) 
+    :nth-last-child(n) 
+    :nth-of-type(n) 
+    :nth-last-of-type(n) 
+
+    :empty 
+    :target                 用于为页面中的某个target元素指定样式(该元素的id被当做页面中的超链接使用)        
+    :not                     排除特定子元素
+</code></pre><h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><pre><code>::before         指定元素之前插入内容
+::after         指定元素之后插入内容
+::first-letter    文本的第一个单词或字（如中文、日文、韩文等）
+::first-line     文本第一行
+::selection     可改变选中文本的样式
+</code></pre><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><pre><code>RGBA:
+
+HSLA:    Hue Saturation Lightness Alpha
+    H 色调 取值范围0~360，0/360表示红色、120表示绿色、240表示蓝色
+    S 饱和度 取值范围0%~100%
+    L 亮度 取值范围0%~100%
+    A 透明度 取值范围0~1
+在进行近似色变换的时候, HSLA比rgba好用的多
+
+transparent:完全透明;
+</code></pre><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><pre><code>- box-sizing:content-box;  width = content  
+- box-sizing:border-box;   width = border + padding + content
+</code></pre><h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><p><strong>阴影</strong><br>    text-shadow:none | <shadow> [ , <shadow> ]*<br>        <shadow> = <length>{2,3} &amp;&amp; <color>?<br>        <length>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值<br>        <length>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值<br>        <length>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值<br>        <color>： 设置对象的阴影的颜色。 </color></length></length></length></color></length></shadow></shadow></shadow></p>
+<pre><code>demo{    // 火焰文字效果
+    font:bold 100px/1.5 arial,sans-serif;
+    text-shadow:0 0 5px #fff,
+    0 0 20px #fefcc9,
+    10px -10px 30px #feec85,
+    -20px -20px 40px #ffae34,
+    20px -40px 50px #ec760c,
+    -20px -60px 60px #cd4606,
+    0 -80px 70px #973716,
+    10px -90px 80px #451b0e;
+}
+demo{    //    霓虹效果
+    font:bold 100px/1.5 georgia,sans-serif;
+    text-shadow:0 0 10px #fff, 
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #ff00de,
+    0 0 70px #ff00de,
+    0 0 80px #ff00de,
+    0 0 100px #ff00de,
+    0 0 150px #ff00de;
+}
+</code></pre><p><strong>排版</strong></p>
+<pre><code>word-wrap
+    normal： 允许内容顶开或溢出指定的容器边界。 
+    break-word： 内容将在边界内换行。如果需要，单词内部允许断行。 
+
+word-break：normal | keep-all | break-all
+    normal： 依照亚洲语言和非亚洲语言的文本规则，允许在字内换行。 
+    keep-all： 与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本。 
+    break-all： 该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字母间断行。
+
+word-spacing：normal | &lt;length&gt; | &lt;percentage&gt;    
+        检索或设置对象中的单词之间的最小，最大和最佳间隙。
+
+writing-mode: horizontal-tb | vertical-rl | vertical-lr 
+    此属性效果不能被累加使用。例如，父对象的此属性值设为 tb-rl ，子对象再设置该属性将不起作用，仍应用父对象的设置。
+
+white-space：normal | pre | nowrap | pre-wrap | pre-line
+    normal： 默认处理方式。 
+    pre： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象 
+    nowrap： 强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。 
+    pre-wrap： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。 
+    pre-line： 保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。 
+</code></pre><h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p><strong>圆角边框</strong>        </p>
+<pre><code>border-radius:圆角边框:border-radius: 100px 25px 80px 5px / 45px 25px 30px 15px;;
+    border-radius还可以用斜杠设置第二组值。这时，第一组值表示水平半径，第二组值表示垂直半径。第二组值也可以同时设置1到4个值，应用规则与第一组值相同。
+</code></pre><p><strong>边框图片</strong></p>
+<pre><code>移动端自适应高度的背景:
+border-image-source:url();
+border-image-width:一般设置为原始边框宽度;
+border-image-slice:上下左右,可简写,fill;    fill中间填充;
+border-image-repeat:stretch;
+
+border-image-ouset:0px;            扩展,一般不用
+</code></pre><h4 id="边框阴影"><a href="#边框阴影" class="headerlink" title="边框阴影"></a>边框阴影</h4><pre><code>box-shadow:5px 5px 10px 2px #999 insert,-5px -5px 10px 2px #333;
+box-shadow: -15px -15px(方向和距离) 10px(模糊半径) 3px(大小变化) #f00 inset;
+    &lt;length&gt;①： 第1个长度值用来设置对象的阴影水平偏移值。可以 为负值 
+    &lt;length&gt;②： 第2个长度值用来设置对象的阴影垂直偏移值。可以 为负值 
+    &lt;length&gt;③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许 负值 
+    &lt;length&gt;④： 如果提供了第4个长度值则用来设置对象的阴影外延值。可以 为负值 
+    &lt;color&gt;： 设置对象的阴影的颜色。默认为黑色 
+    inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影 
+
+.cloudy {    //    双子
+    background: #60768D;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    box-shadow: 1rem 0.2rem 0 -0.1rem;
+
+    position: absolute;
+    left: .5rem;
+    top: 1.8rem;
+    z-index: 5;
+}
+</code></pre><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><pre><code>- 背景定位原点:
+- background-position:x y;
+
+- 背景是否可以滚动:
+- background-attachment:scroll/fixed;
+
+- 背景图尺寸:
+- background-size:x y;
+- background-size:cover / contain ;         更常用
+
+- 背景定位原点:
+- background-origin:padding-box/border-box/content-box;
+
+- 背景裁切:
+- background-clip:padding-box/border-box/content-box;
+    背景定位原点设为padding-box 裁切设为padding-box, 实现移动端按钮精灵图背景居中显示(提升交互体验)
+    对比clip:rect
+        clip:rect(t r b l)
+        rect(30px 200px 200px 20px)
+
+- 多重背景:
+- background-img:url()*3;background-position:a,b,c;
+
+- 复合属性:
+background:color,image,repeat,attachment,position,size,clip,origin;
+</code></pre><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><p><strong>线性渐变</strong></p>
+<pre><code>- background-image: linear-gradient(to right,green,blue,red);
+- 角度:正上方是0deg
+- background-image: linear-gradient(135deg,green,blue,red);
+
+- background-image: linear-gradient(135deg,green 30%,blue 80%,red);
+</code></pre><p><strong>径向渐变</strong></p>
+<pre><code>- 眼睛:background-image: radial-gradient(circle at 150px 50px,#ddd 1%,#000 3% );
+
+    &lt;extent-keyword&gt; circle | ellipse 都接受该值作为 size
+    closest-side： 指定径向渐变的半径长度为从圆心到离圆心最近的边 
+    closest-corner： 指定径向渐变的半径长度为从圆心到离圆心最近的角 
+    farthest-side： 指定径向渐变的半径长度为从圆心到离圆心最远的边 
+    farthest-corner： 指定径向渐变的半径长度为从圆心到离圆心最远的角 
+</code></pre><p><strong>重复渐变</strong></p>
+<pre><code>- background-image: repeating-linear-gradient(to right,green,blue 10%,red 30%);
+
+- background-image: repeating-radial-gradient(circle at center,#ddd,#00f 50%,#000 10%);
+</code></pre><h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><p><strong>过渡</strong></p>
+<pre><code>- transition-property:none/all(所有属性都过渡)/property(定义某些css属性,逗号分隔);            //    无继承性
+
+- transition-duration:time;
+
+- transition-delay:time;        //可为负值, 表示前面的时间忽略
+
+- transition-timing-function:(速度曲线);
+
+- transition:property duration timing-function delay;
+</code></pre><p><strong>变形</strong></p>
+<pre><code>2D变换
+
+    任何非none值的transform会导致创建一个堆栈上下文和包含块。
+    如果父级元素设置了transform属性，position:relative/absolute/fixed会基于此定位
+
+- transform:none/transform-functions;
+
+-matrix(a,b,c,d,e,f)        矩形变换,定位
+
+-translate(x,y)            移动
+-scale(x,y)                缩放
+-rotate(xdeg)            旋转
+-skew(x,y)                倾斜 角度值 
+
+- transform-origin:x y;变换中心点;
+
+3D变换
+
+    perspective和preserve-3d都不可继承. 只对一级子元素作用.
+    只设置transform-style，不设置perspective，三维变换的子元素不能形成透视，在平面被挤压，此时加上transform属性之后, 创建了新的堆栈空间. 就可以了
+
+透视    perspective: 定义 3D 元素距视图的距离，以像素计，用于设置透视/景深效果。
+    1. 作为一个属性，设置给父元素，作用于所有3D转换的子元素
+    2. 作为transform属性的一个值，做用于元素自身 
+            1. perspective 属性只影响 3D 转换元素。
+            2. perspective取值为none或不设置，就没有真3D空间。
+            3. perspective取值越小，3D效果就越明显，也就是你的眼睛越靠近真3D。
+            4. perspective的值无穷大，或值为0时与取值为none效果一样。
+
+    3D呈现（transform-style） 给父级元素添加, 不能继承
+
+    设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为变形原素。
+
+        flat：所有子元素在 2D 平面呈现
+        preserve-3d：保留3D空间
+
+backface-visibility: 设置元素背面是否可见
+
+参考文档
+http://isux.tencent.com/css3/index.html?transform
+CSS3动画库
+animate.css
+</code></pre><p><strong>动画</strong></p>
+<pre><code>关键帧@keyframes;
+@keyframes animationname {
+    keyframes-selector{css-styles;}    
+}
+
+@keyframes &apos;appeardisapper&apos; {
+    from,to{opacity:0;}
+    20%,80%{opacity:1}
+}
+
+- animation-name
+
+- animation-duration
+
+- animation-timing-fuction
+
+- animation-delay
+
+- animation-itration-count:number/infinite;
+
+- animation-direction:normal/alternate                交错进行:摆钟
+
+- animation-play-state  播放状态, running paused        js控制
+
+- animation-fill-mode  执行开始/完毕后状态 backwards / forwards较多
+
+- steps(60) 分为60步完成
+
+复合属性:animation:name,duration,timing-function,delay,itration-count,direction
+</code></pre><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h3><pre><code>column-count:
+column-gap:
+column-rule:1px solid #ccc;
+
+column-width:
+        如果与分列默认宽度不一致,则尽量补充长度
+        列宽大于默认,以设置的为基准,但是自动伸缩来填满页面;
+        列宽小于默认,以默认的为准.
+        没鸟用.
+column-span:1/all;    用于标题跨列
+
+如果设置了高度,将会影响盒子列数:小于默认高度,分更多栏;大于不影响列数;
+
+对比表格:colspan,rowspan;
+</code></pre><h3 id="伸缩布局"><a href="#伸缩布局" class="headerlink" title="伸缩布局"></a>伸缩布局</h3><pre><code>Flex是Flexible Box的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。
+
+采用Flex布局的元素，称为Flex容器（flex container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&quot;项目&quot;。
+</code></pre><p><img src="http://i.imgur.com/IJ6c5Vd.png" alt="盒子图解"></p>
+<pre><code>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
+
+项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+</code></pre><p><strong>容器的属性</strong></p>
+<pre><code>以下6个属性设置在容器上。
+
+1. flex-direction     属性决定主轴的方向（即项目的排列方向）。
+        flex-direction: row | row-reverse | column | column-reverse;
+
+2. flex-wrap        定义如何换行
+        flex-wrap: nowrap | wrap | wrap-reverse;
+
+3. flex-flow        **上面两个的简写方式**
+
+4. justify-content    属性定义了项目在主轴上的对齐方式。
+        justify-content: flex-start | flex-end | center | space-between | space-around;
+
+5. align-items    属性定义项目在交叉轴上如何对齐。
+        align-items: flex-start | flex-end | center | baseline | stretch;
+
+6. align-content        属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+        align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+</code></pre><p><a href="http://i.imgur.com/vZJdk7F.png" target="_blank" rel="external">图解</a>    </p>
+<p><strong>项目的属性</strong></p>
+<pre><code>以下6个属性设置在项目上。
+
+1. order        属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+        order: &lt;integer&gt;;    /* default 0 */
+
+2. flex-grow        属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+        flex-grow: &lt;number&gt;; /* default 0 */
+
+3. flex-shrink    属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+        flex-shrink: &lt;number&gt;; /* default 1 */
+
+4. flex-basis    属性定义了在分配多余空间之前，项目占据的基础尺寸, 它的默认值为auto，即项目的本来大小。
+        flex-basis: &lt;length&gt; | auto; /* default auto */
+
+5. flex    **属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。**
+
+6. align-self    单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto
+         align-self: auto | flex-start | flex-end | center | baseline | stretch;
+</code></pre><h3 id="Web字体"><a href="#Web字体" class="headerlink" title="Web字体"></a>Web字体</h3><p><strong>字体格式</strong></p>
+<pre><code>- @font-face;定义服务器字体:
+
+    @font-face {
+        font-family;xxx;
+        src:xxx;
+    }
+
+- word-wrap;实现长单词和url在容器内的自动换行;    
+- text-shadow:h- v- blur color,第二组参数,...;
+
+不同浏览器所支持的字体格式是不一样的:
+1. TureType(.ttf)格式
+        .ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；
+
+2. OpenType(.otf)格式
+        .otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；
+
+3. Web Open Font Format(.woff)格式
+        woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；
+
+4. Embedded Open Type(.eot)格式
+        .eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；
+
+5. SVG(.svg)格式
+        .svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；
+
+    了解了上面的知识后，我们就需要为不同的浏览器准备不同格式的字体，通常我们会通过字体生成工具帮我们生成各种格式的字体，因此无需过于在意字体格式间的区别差异。
+
+推荐http://www.zhaozi.cn/、http://www.youziku.com/ 查找更多中文字体
+</code></pre><p><strong>字体图标</strong></p>
+<pre><code>其实我们可以把文字理解成是一种特殊形状的图片，反之我们是不是也可以把图片制作成字体呢？
+答案是肯定的。
+
+常见的是把网页常用的一些小的图标，借助工具帮我们生成一个字体包，然后就可以像使用文字一样使用图标了。
+
+主体元素添加两个类名, (字体类名 + 图标类名)
+通过伪元素的方式添加图标. content = &apos;\eabd&apos;; 内容需加斜杠
+
+优点：
+    1、将所有图标打包成字体库，减少请求；
+    2、具有矢量性，可保证清晰度；
+    3、使用灵活，便于维护；
+
+Font Awesome 使用介绍
+    http://fontawesome.dashgame.com/
+
+定制自已的字体图标库
+    http://iconfont.cn/
+    https://icomoon.io/
+
+SVG素材
+    http://www.iconsvg.com/
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c33-动画-样式/">c33 动画  样式</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2015/12/05/css3入门/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="css3入门">
          &nbsp;
         view
     </span>

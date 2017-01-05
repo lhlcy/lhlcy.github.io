@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端-css3入门 | lhl博客</title>
+
+  <!-- keywords -->
+  
+    <meta name="keywords" content="前端">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3浏览器支持程度差, 移动端支持优于PC端
+考虑用户群体, 遵照产品方案
+浏览器兼容:
+-webkit-:Safari and Chrome 兼容前缀
+-ms-:IE9
+-moz-:Firefox
+-o-:Opera
+
+通过    http://caniuse.com/    可查询各特性的支持程度, 一般兼容性处理的方法是添加私有前缀, 如不能解决, 应避免使用, 无需刻意去处理css3的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3入门">
+<meta property="og:url" content="http://yoursite.com/2015/12/05/css3入门/index.html">
+<meta property="og:site_name" content="lhl博客">
+<meta property="og:description" content="CSS3浏览器支持程度差, 移动端支持优于PC端
+考虑用户群体, 遵照产品方案
+浏览器兼容:
+-webkit-:Safari and Chrome 兼容前缀
+-ms-:IE9
+-moz-:Firefox
+-o-:Opera
+
+通过    http://caniuse.com/    可查询各特性的支持程度, 一般兼容性处理的方法是添加私有前缀, 如不能解决, 应避免使用, 无需刻意去处理css3的">
+<meta property="og:image" content="http://i.imgur.com/IJ6c5Vd.png">
+<meta property="og:updated_time" content="2017-01-05T08:46:40.698Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3入门">
+<meta name="twitter:description" content="CSS3浏览器支持程度差, 移动端支持优于PC端
+考虑用户群体, 遵照产品方案
+浏览器兼容:
+-webkit-:Safari and Chrome 兼容前缀
+-ms-:IE9
+-moz-:Firefox
+-o-:Opera
+
+通过    http://caniuse.com/    可查询各特性的支持程度, 一般兼容性处理的方法是添加私有前缀, 如不能解决, 应避免使用, 无需刻意去处理css3的">
+<meta name="twitter:image" content="http://i.imgur.com/IJ6c5Vd.png">
+  
+    <link rel="alternative" href="/atom.xml" title="lhl博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="img/dad.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">lhl</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">有点小逗比</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/c33-动画-样式/" style="font-size: 10px;">c33 动画  样式</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/html5-标签/" style="font-size: 10px;">html5 标签</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">true</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">lhl</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="img/dad.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">lhl</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">有点小逗比</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-css3入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/05/css3入门/" class="article-date">
+  	<time datetime="2015-12-05T05:45:04.000Z" itemprop="datePublished">2015-12-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css3入门
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c33-动画-样式/">c33 动画  样式</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2015/12/05/css3入门/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="css3入门">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><pre><code>浏览器支持程度差, 移动端支持优于PC端
+考虑用户群体, 遵照产品方案
+</code></pre><p><strong>浏览器兼容:</strong></p>
+<pre><code>-webkit-:Safari and Chrome 兼容前缀
+-ms-:IE9
+-moz-:Firefox
+-o-:Opera
+
+通过    http://caniuse.com/    可查询各特性的支持程度, 一般兼容性处理的方法是添加私有前缀, 如不能解决, 应避免使用, 无需刻意去处理css3的兼容性问题.
+</code></pre><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>- (E)[att]            存在该属性即可            
+- (E)[att=value]        属性值完全等于value
+- (E)[att^=value]    
+    p[id^=&quot;one&quot;] id包含前缀为one的元素
+
+- (E)[att$=value]
+    p[id$=&quot;one&quot;] id包含后缀为one的元素
+
+- (E)[att~=value]
+    p[id~=&quot;one&quot;] id属性值为多个,其中一个等于one的元素
+
+- (E)[att*=value]    
+    p[id*=&quot;one&quot;] id包含one的元素
+
+- (E)[att|=value]    
+    p[id|=&quot;one&quot;] id包含以one开头,并用连字符&apos;-&apos;分隔的元素,如果仅为one,也会被选中
+</code></pre><h3 id="关系选择器"><a href="#关系选择器" class="headerlink" title="关系选择器"></a>关系选择器</h3><pre><code>- 子代选择器 
+    p -  span 选择第一级子元素
+
+- 兄弟选择器
+    + 临近兄弟选择器
+    ~ 普通兄弟选择器
+
+- 结构化伪类选择器
+    :root                     匹配文档根元素
+    :only-child 
+    :first-child 
+    :last-child 
+    :nth-child(2n+1) 
+    :nth-last-child(n) 
+    :nth-of-type(n) 
+    :nth-last-of-type(n) 
+
+    :empty 
+    :target                 用于为页面中的某个target元素指定样式(该元素的id被当做页面中的超链接使用)        
+    :not                     排除特定子元素
+</code></pre><h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><pre><code>::before         指定元素之前插入内容
+::after         指定元素之后插入内容
+::first-letter    文本的第一个单词或字（如中文、日文、韩文等）
+::first-line     文本第一行
+::selection     可改变选中文本的样式
+</code></pre><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><pre><code>RGBA:
+
+HSLA:    Hue Saturation Lightness Alpha
+    H 色调 取值范围0~360，0/360表示红色、120表示绿色、240表示蓝色
+    S 饱和度 取值范围0%~100%
+    L 亮度 取值范围0%~100%
+    A 透明度 取值范围0~1
+在进行近似色变换的时候, HSLA比rgba好用的多
+
+transparent:完全透明;
+</code></pre><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><pre><code>- box-sizing:content-box;  width = content  
+- box-sizing:border-box;   width = border + padding + content
+</code></pre><h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><p><strong>阴影</strong><br>    text-shadow:none | <shadow> [ , <shadow> ]*<br>        <shadow> = <length>{2,3} &amp;&amp; <color>?<br>        <length>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值<br>        <length>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值<br>        <length>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值<br>        <color>： 设置对象的阴影的颜色。 </color></length></length></length></color></length></shadow></shadow></shadow></p>
+<pre><code>demo{    // 火焰文字效果
+    font:bold 100px/1.5 arial,sans-serif;
+    text-shadow:0 0 5px #fff,
+    0 0 20px #fefcc9,
+    10px -10px 30px #feec85,
+    -20px -20px 40px #ffae34,
+    20px -40px 50px #ec760c,
+    -20px -60px 60px #cd4606,
+    0 -80px 70px #973716,
+    10px -90px 80px #451b0e;
+}
+demo{    //    霓虹效果
+    font:bold 100px/1.5 georgia,sans-serif;
+    text-shadow:0 0 10px #fff, 
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #ff00de,
+    0 0 70px #ff00de,
+    0 0 80px #ff00de,
+    0 0 100px #ff00de,
+    0 0 150px #ff00de;
+}
+</code></pre><p><strong>排版</strong></p>
+<pre><code>word-wrap
+    normal： 允许内容顶开或溢出指定的容器边界。 
+    break-word： 内容将在边界内换行。如果需要，单词内部允许断行。 
+
+word-break：normal | keep-all | break-all
+    normal： 依照亚洲语言和非亚洲语言的文本规则，允许在字内换行。 
+    keep-all： 与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本。 
+    break-all： 该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字母间断行。
+
+word-spacing：normal | &lt;length&gt; | &lt;percentage&gt;    
+        检索或设置对象中的单词之间的最小，最大和最佳间隙。
+
+writing-mode: horizontal-tb | vertical-rl | vertical-lr 
+    此属性效果不能被累加使用。例如，父对象的此属性值设为 tb-rl ，子对象再设置该属性将不起作用，仍应用父对象的设置。
+
+white-space：normal | pre | nowrap | pre-wrap | pre-line
+    normal： 默认处理方式。 
+    pre： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象 
+    nowrap： 强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。 
+    pre-wrap： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。 
+    pre-line： 保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。 
+</code></pre><h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p><strong>圆角边框</strong>        </p>
+<pre><code>border-radius:圆角边框:border-radius: 100px 25px 80px 5px / 45px 25px 30px 15px;;
+    border-radius还可以用斜杠设置第二组值。这时，第一组值表示水平半径，第二组值表示垂直半径。第二组值也可以同时设置1到4个值，应用规则与第一组值相同。
+</code></pre><p><strong>边框图片</strong></p>
+<pre><code>移动端自适应高度的背景:
+border-image-source:url();
+border-image-width:一般设置为原始边框宽度;
+border-image-slice:上下左右,可简写,fill;    fill中间填充;
+border-image-repeat:stretch;
+
+border-image-ouset:0px;            扩展,一般不用
+</code></pre><h4 id="边框阴影"><a href="#边框阴影" class="headerlink" title="边框阴影"></a>边框阴影</h4><pre><code>box-shadow:5px 5px 10px 2px #999 insert,-5px -5px 10px 2px #333;
+box-shadow: -15px -15px(方向和距离) 10px(模糊半径) 3px(大小变化) #f00 inset;
+    &lt;length&gt;①： 第1个长度值用来设置对象的阴影水平偏移值。可以 为负值 
+    &lt;length&gt;②： 第2个长度值用来设置对象的阴影垂直偏移值。可以 为负值 
+    &lt;length&gt;③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许 负值 
+    &lt;length&gt;④： 如果提供了第4个长度值则用来设置对象的阴影外延值。可以 为负值 
+    &lt;color&gt;： 设置对象的阴影的颜色。默认为黑色 
+    inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影 
+
+.cloudy {    //    双子
+    background: #60768D;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    box-shadow: 1rem 0.2rem 0 -0.1rem;
+
+    position: absolute;
+    left: .5rem;
+    top: 1.8rem;
+    z-index: 5;
+}
+</code></pre><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><pre><code>- 背景定位原点:
+- background-position:x y;
+
+- 背景是否可以滚动:
+- background-attachment:scroll/fixed;
+
+- 背景图尺寸:
+- background-size:x y;
+- background-size:cover / contain ;         更常用
+
+- 背景定位原点:
+- background-origin:padding-box/border-box/content-box;
+
+- 背景裁切:
+- background-clip:padding-box/border-box/content-box;
+    背景定位原点设为padding-box 裁切设为padding-box, 实现移动端按钮精灵图背景居中显示(提升交互体验)
+    对比clip:rect
+        clip:rect(t r b l)
+        rect(30px 200px 200px 20px)
+
+- 多重背景:
+- background-img:url()*3;background-position:a,b,c;
+
+- 复合属性:
+background:color,image,repeat,attachment,position,size,clip,origin;
+</code></pre><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><p><strong>线性渐变</strong></p>
+<pre><code>- background-image: linear-gradient(to right,green,blue,red);
+- 角度:正上方是0deg
+- background-image: linear-gradient(135deg,green,blue,red);
+
+- background-image: linear-gradient(135deg,green 30%,blue 80%,red);
+</code></pre><p><strong>径向渐变</strong></p>
+<pre><code>- 眼睛:background-image: radial-gradient(circle at 150px 50px,#ddd 1%,#000 3% );
+
+    &lt;extent-keyword&gt; circle | ellipse 都接受该值作为 size
+    closest-side： 指定径向渐变的半径长度为从圆心到离圆心最近的边 
+    closest-corner： 指定径向渐变的半径长度为从圆心到离圆心最近的角 
+    farthest-side： 指定径向渐变的半径长度为从圆心到离圆心最远的边 
+    farthest-corner： 指定径向渐变的半径长度为从圆心到离圆心最远的角 
+</code></pre><p><strong>重复渐变</strong></p>
+<pre><code>- background-image: repeating-linear-gradient(to right,green,blue 10%,red 30%);
+
+- background-image: repeating-radial-gradient(circle at center,#ddd,#00f 50%,#000 10%);
+</code></pre><h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><p><strong>过渡</strong></p>
+<pre><code>- transition-property:none/all(所有属性都过渡)/property(定义某些css属性,逗号分隔);            //    无继承性
+
+- transition-duration:time;
+
+- transition-delay:time;        //可为负值, 表示前面的时间忽略
+
+- transition-timing-function:(速度曲线);
+
+- transition:property duration timing-function delay;
+</code></pre><p><strong>变形</strong></p>
+<pre><code>2D变换
+
+    任何非none值的transform会导致创建一个堆栈上下文和包含块。
+    如果父级元素设置了transform属性，position:relative/absolute/fixed会基于此定位
+
+- transform:none/transform-functions;
+
+-matrix(a,b,c,d,e,f)        矩形变换,定位
+
+-translate(x,y)            移动
+-scale(x,y)                缩放
+-rotate(xdeg)            旋转
+-skew(x,y)                倾斜 角度值 
+
+- transform-origin:x y;变换中心点;
+
+3D变换
+
+    perspective和preserve-3d都不可继承. 只对一级子元素作用.
+    只设置transform-style，不设置perspective，三维变换的子元素不能形成透视，在平面被挤压，此时加上transform属性之后, 创建了新的堆栈空间. 就可以了
+
+透视    perspective: 定义 3D 元素距视图的距离，以像素计，用于设置透视/景深效果。
+    1. 作为一个属性，设置给父元素，作用于所有3D转换的子元素
+    2. 作为transform属性的一个值，做用于元素自身 
+            1. perspective 属性只影响 3D 转换元素。
+            2. perspective取值为none或不设置，就没有真3D空间。
+            3. perspective取值越小，3D效果就越明显，也就是你的眼睛越靠近真3D。
+            4. perspective的值无穷大，或值为0时与取值为none效果一样。
+
+    3D呈现（transform-style） 给父级元素添加, 不能继承
+
+    设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为变形原素。
+
+        flat：所有子元素在 2D 平面呈现
+        preserve-3d：保留3D空间
+
+backface-visibility: 设置元素背面是否可见
+
+参考文档
+http://isux.tencent.com/css3/index.html?transform
+CSS3动画库
+animate.css
+</code></pre><p><strong>动画</strong></p>
+<pre><code>关键帧@keyframes;
+@keyframes animationname {
+    keyframes-selector{css-styles;}    
+}
+
+@keyframes &apos;appeardisapper&apos; {
+    from,to{opacity:0;}
+    20%,80%{opacity:1}
+}
+
+- animation-name
+
+- animation-duration
+
+- animation-timing-fuction
+
+- animation-delay
+
+- animation-itration-count:number/infinite;
+
+- animation-direction:normal/alternate                交错进行:摆钟
+
+- animation-play-state  播放状态, running paused        js控制
+
+- animation-fill-mode  执行开始/完毕后状态 backwards / forwards较多
+
+- steps(60) 分为60步完成
+
+复合属性:animation:name,duration,timing-function,delay,itration-count,direction
+</code></pre><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h3><pre><code>column-count:
+column-gap:
+column-rule:1px solid #ccc;
+
+column-width:
+        如果与分列默认宽度不一致,则尽量补充长度
+        列宽大于默认,以设置的为基准,但是自动伸缩来填满页面;
+        列宽小于默认,以默认的为准.
+        没鸟用.
+column-span:1/all;    用于标题跨列
+
+如果设置了高度,将会影响盒子列数:小于默认高度,分更多栏;大于不影响列数;
+
+对比表格:colspan,rowspan;
+</code></pre><h3 id="伸缩布局"><a href="#伸缩布局" class="headerlink" title="伸缩布局"></a>伸缩布局</h3><pre><code>Flex是Flexible Box的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。
+
+采用Flex布局的元素，称为Flex容器（flex container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&quot;项目&quot;。
+</code></pre><p><img src="http://i.imgur.com/IJ6c5Vd.png" alt="盒子图解"></p>
+<pre><code>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
+
+项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+</code></pre><p><strong>容器的属性</strong></p>
+<pre><code>以下6个属性设置在容器上。
+
+1. flex-direction     属性决定主轴的方向（即项目的排列方向）。
+        flex-direction: row | row-reverse | column | column-reverse;
+
+2. flex-wrap        定义如何换行
+        flex-wrap: nowrap | wrap | wrap-reverse;
+
+3. flex-flow        **上面两个的简写方式**
+
+4. justify-content    属性定义了项目在主轴上的对齐方式。
+        justify-content: flex-start | flex-end | center | space-between | space-around;
+
+5. align-items    属性定义项目在交叉轴上如何对齐。
+        align-items: flex-start | flex-end | center | baseline | stretch;
+
+6. align-content        属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+        align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+</code></pre><p><a href="http://i.imgur.com/vZJdk7F.png" target="_blank" rel="external">图解</a>    </p>
+<p><strong>项目的属性</strong></p>
+<pre><code>以下6个属性设置在项目上。
+
+1. order        属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+        order: &lt;integer&gt;;    /* default 0 */
+
+2. flex-grow        属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+        flex-grow: &lt;number&gt;; /* default 0 */
+
+3. flex-shrink    属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+        flex-shrink: &lt;number&gt;; /* default 1 */
+
+4. flex-basis    属性定义了在分配多余空间之前，项目占据的基础尺寸, 它的默认值为auto，即项目的本来大小。
+        flex-basis: &lt;length&gt; | auto; /* default auto */
+
+5. flex    **属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。**
+
+6. align-self    单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto
+         align-self: auto | flex-start | flex-end | center | baseline | stretch;
+</code></pre><h3 id="Web字体"><a href="#Web字体" class="headerlink" title="Web字体"></a>Web字体</h3><p><strong>字体格式</strong></p>
+<pre><code>- @font-face;定义服务器字体:
+
+    @font-face {
+        font-family;xxx;
+        src:xxx;
+    }
+
+- word-wrap;实现长单词和url在容器内的自动换行;    
+- text-shadow:h- v- blur color,第二组参数,...;
+
+不同浏览器所支持的字体格式是不一样的:
+1. TureType(.ttf)格式
+        .ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；
+
+2. OpenType(.otf)格式
+        .otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；
+
+3. Web Open Font Format(.woff)格式
+        woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；
+
+4. Embedded Open Type(.eot)格式
+        .eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；
+
+5. SVG(.svg)格式
+        .svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；
+
+    了解了上面的知识后，我们就需要为不同的浏览器准备不同格式的字体，通常我们会通过字体生成工具帮我们生成各种格式的字体，因此无需过于在意字体格式间的区别差异。
+
+推荐http://www.zhaozi.cn/、http://www.youziku.com/ 查找更多中文字体
+</code></pre><p><strong>字体图标</strong></p>
+<pre><code>其实我们可以把文字理解成是一种特殊形状的图片，反之我们是不是也可以把图片制作成字体呢？
+答案是肯定的。
+
+常见的是把网页常用的一些小的图标，借助工具帮我们生成一个字体包，然后就可以像使用文字一样使用图标了。
+
+主体元素添加两个类名, (字体类名 + 图标类名)
+通过伪元素的方式添加图标. content = &apos;\eabd&apos;; 内容需加斜杠
+
+优点：
+    1、将所有图标打包成字体库，减少请求；
+    2、具有矢量性，可保证清晰度；
+    3、使用灵活，便于维护；
+
+Font Awesome 使用介绍
+    http://fontawesome.dashgame.com/
+
+定制自已的字体图标库
+    http://iconfont.cn/
+    https://icomoon.io/
+
+SVG素材
+    http://www.iconsvg.com/
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/05/h5总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          h5总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="css3入门" data-title="css3入门" data-url="http://yoursite.com/2015/12/05/css3入门/"  data-images="img/dad.jpeg" data-content="css3入门">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 lhl
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
