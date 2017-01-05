@@ -75,11 +75,6 @@
 						</div>
 						
 						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
 					</div>
 					
 				</div>
@@ -91,8 +86,6 @@
 						
 						<li>友情链接</li>
 						
-						
-						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -137,12 +130,6 @@
 				
 
 				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">true</div>
-				</section>
-				
 			</div>
 		</div>
 	</header>				
@@ -184,222 +171,6 @@
 	</div>
 </nav>
       <div class="body-wrap">
-  
-    <article id="dom-API" class="article article-type-dom" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/05/API/" class="article-date">
-  	<time datetime="2017-01-05T08:54:56.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/05/API/">
-        API
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h1><p>##节点##</p>
-<pre><code>元素节点 标签
-
-属性节点 元素属性
-
-文本节点 元素中内容
-
-注释节点    注释
-</code></pre><p>##节点属性##</p>
-<pre><code>nodeName
-    - 元素节点    与标签名相同
-    - 属性节点    属性的名称
-    - 文本节点    #text
-    - 文档节点    #document
-    - 注释节点
-
-nodeType
-    - 元素    1
-    - 属性    2
-    - 文本    3
-    - 注释    8
-    - 文档    9
-    - 文档类型节点    10
-    - 文档片段节点    11
-
-nodeValue
-    - 元素节点    undefined或null
-    - 文本节点    文本自身
-    - 属性节点    属性的值
-</code></pre><p>##获取节点##</p>
-<pre><code>getElementById 根据Id 得到一个元素
-
-getElementsByClassName 根据类名 得到一个数组  ie6/7/8有兼容性问题
-    封装兼容性思路:取出所有的盒子,并判断类名
-var dom = document.body.getElementsByTagName(&quot;*&quot;);
-
-getElementsByName name属性
-
-getElementsByTagName 根据标签 得到一个数组
-
-其他:
-document.head
-document.body
-document.title  浏览器标题处显示的内容
-document.documentElement(html根节点);
-</code></pre><h3 id="document的属性"><a href="#document的属性" class="headerlink" title="document的属性"></a>document的属性</h3><pre><code>document.title
-document.bgColor
-document.linkColor
-document.alinkColor
-document.vlinkColor
-document.URL
-document.fileCreatedDate
-document.fileModifiedDate
-document.fileSize
-document.cookie
-document.charset
-</code></pre><p>##遍历节点方法##</p>
-<pre><code>children    不是标准的DOM属性,但是得到所有浏览器支持,而且只会获得标签节点
-
-childNodes  是标准的DOM属性,返回一个数组
-    - 高版本浏览器会计算空白文本节点
-
-firstChild    第一个节点
-
-firstElementChild    第一个节点
-
-lastChild    最后一个节点
-
-lastElementChild  最后一个节点
-
-parentNode 返回父节点
-
-nextSibling   下一个兄弟节点     会获得除标签以外的文本节点,IE8及之前的所有浏览器都支持,
-    低版本IE会忽略空白文本节点
-    - 需排除空白文本节点    属性值为3
-    - x.nodeType != 1
-    - x &amp;&amp; x.nodeType != 1
-
-nextElementSibling        IE不支持,会报错 只会获得元素节点
-
-    ?_? var aim = d.nextElementSibling || d.nextSibling;返回了一些奇怪的东西!
-
-previousSibling  上一个元素
-
-previousElementSibling    上一个元素   IE不支持
-</code></pre><p>##DOM操作## </p>
-<pre><code>    - 三步：创建、赋值、插入。
-    - 操作是在子节点位置
-
-obj.style的方式:
-getAttribute() 获得元素节点的属性值
-setAttribute() 设置元素节点的属性值
-
-添加多个属性的方式:添加类名
-
-获取某个属性的值: window.getComputedStyle(obj,null)[attr];
-    obj.currentStyle[attr] IE支持的
-
-- inputs[i].value = &quot;a&quot;+i;                    // 属性对象方式, 写入内存
-
-- inputs[i].setAttribute(&quot;value&quot;,&quot;a&quot;+i);        // 元素对象方式, 写入文件
-- inputs[i].getAttribute(&quot;value&quot;)
-
-innerHTML:无兼容性问题,赋值的innerHTML里面如果有标签,会解析
-
-innerText:IE8及以前的浏览器版本支持,但是低版本的火狐42不支持,仅支持textContent,而IE8及以前的浏览器又不支持textContent,高版本的都支持这两个属性.
-    - 兼容性方法:
-    function set(ele,value) {
-        if(typeof ele.innerText == &quot;string&quot;) {
-            ele.innerText = value;
-        }else {
-            ele.textContent = value;
-        }
-    }
-
-createElement(&quot;p&quot;) 创建元素节点
-    - var btn = document.createElement(&quot;input&quot;);
-    - btn.setAttribute(&quot;onclick&quot;, &quot;javascript:alert(&apos;This is a text!&apos;);&quot;); 
-    - body.appendChild(btn);     
-    - IE7 创建表格必须有表头
-
-createTextNode(&quot; &quot;) 创建文本节点
-    -  var te = document.createTextNode(&quot;I Love JavaScript!&quot;);
-    - ele.appendChild(te);
-
-appendChild() 在某节点的子节点后插入节点
-    - 还有剪切功能.
-
-insertBefore() 之前
-    - var otest = document.getElementById(&quot;test&quot;);  
-    - var a= document.createElement(&quot;li&quot;);
-    - a.innerHTML=&quot;PHP&quot;;
-    - otest.insertBefore(a,otest.lastChild);
-    - 还有剪切功能.
-
-removeChild() 删除一个子节点
-    - 从子节点列表中删除某个节点。如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
-    - 1. 删除该节点的内容，先要获取子节点。
-    - 2. 然后使用循环遍历每个子节点。
-    - 3. 使用removeChild()删除节点。
-    - while(content.firstChild) {
-          content.removeChild(content.firstChild);}
-
-replaceChild() 替换一个子节点
-    - 只有父结点才能调用  replaceChild(newnode,oldnode).这个方法.
-        所以，要想替换当前结点的内容或者属性，那么首先得获得父节点，才可以操作，
-        这就是为什么 oldnode.parentNode.replaceChild(newnode,oldnode); 这句代码的写法。。
-    - old.parentNode.replaceChild(new,old); 
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM-API/">DOM ＡＰＩ</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2017/01/05/API/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="API">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
   
     <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -896,6 +667,222 @@ min-width                定义输出设备中的页面最小可见区域宽度�
 <div class="counter-tag counter">
     <span id="/2016/05/02/响应式/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="响应式">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="dom-API" class="article article-type-dom" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/05/API/" class="article-date">
+  	<time datetime="2016-04-05T08:54:56.000Z" itemprop="datePublished">2016-04-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/05/API/">
+        API
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h1><p>##节点##</p>
+<pre><code>元素节点 标签
+
+属性节点 元素属性
+
+文本节点 元素中内容
+
+注释节点    注释
+</code></pre><p>##节点属性##</p>
+<pre><code>nodeName
+    - 元素节点    与标签名相同
+    - 属性节点    属性的名称
+    - 文本节点    #text
+    - 文档节点    #document
+    - 注释节点
+
+nodeType
+    - 元素    1
+    - 属性    2
+    - 文本    3
+    - 注释    8
+    - 文档    9
+    - 文档类型节点    10
+    - 文档片段节点    11
+
+nodeValue
+    - 元素节点    undefined或null
+    - 文本节点    文本自身
+    - 属性节点    属性的值
+</code></pre><p>##获取节点##</p>
+<pre><code>getElementById 根据Id 得到一个元素
+
+getElementsByClassName 根据类名 得到一个数组  ie6/7/8有兼容性问题
+    封装兼容性思路:取出所有的盒子,并判断类名
+var dom = document.body.getElementsByTagName(&quot;*&quot;);
+
+getElementsByName name属性
+
+getElementsByTagName 根据标签 得到一个数组
+
+其他:
+document.head
+document.body
+document.title  浏览器标题处显示的内容
+document.documentElement(html根节点);
+</code></pre><h3 id="document的属性"><a href="#document的属性" class="headerlink" title="document的属性"></a>document的属性</h3><pre><code>document.title
+document.bgColor
+document.linkColor
+document.alinkColor
+document.vlinkColor
+document.URL
+document.fileCreatedDate
+document.fileModifiedDate
+document.fileSize
+document.cookie
+document.charset
+</code></pre><p>##遍历节点方法##</p>
+<pre><code>children    不是标准的DOM属性,但是得到所有浏览器支持,而且只会获得标签节点
+
+childNodes  是标准的DOM属性,返回一个数组
+    - 高版本浏览器会计算空白文本节点
+
+firstChild    第一个节点
+
+firstElementChild    第一个节点
+
+lastChild    最后一个节点
+
+lastElementChild  最后一个节点
+
+parentNode 返回父节点
+
+nextSibling   下一个兄弟节点     会获得除标签以外的文本节点,IE8及之前的所有浏览器都支持,
+    低版本IE会忽略空白文本节点
+    - 需排除空白文本节点    属性值为3
+    - x.nodeType != 1
+    - x &amp;&amp; x.nodeType != 1
+
+nextElementSibling        IE不支持,会报错 只会获得元素节点
+
+    ?_? var aim = d.nextElementSibling || d.nextSibling;返回了一些奇怪的东西!
+
+previousSibling  上一个元素
+
+previousElementSibling    上一个元素   IE不支持
+</code></pre><p>##DOM操作## </p>
+<pre><code>    - 三步：创建、赋值、插入。
+    - 操作是在子节点位置
+
+obj.style的方式:
+getAttribute() 获得元素节点的属性值
+setAttribute() 设置元素节点的属性值
+
+添加多个属性的方式:添加类名
+
+获取某个属性的值: window.getComputedStyle(obj,null)[attr];
+    obj.currentStyle[attr] IE支持的
+
+- inputs[i].value = &quot;a&quot;+i;                    // 属性对象方式, 写入内存
+
+- inputs[i].setAttribute(&quot;value&quot;,&quot;a&quot;+i);        // 元素对象方式, 写入文件
+- inputs[i].getAttribute(&quot;value&quot;)
+
+innerHTML:无兼容性问题,赋值的innerHTML里面如果有标签,会解析
+
+innerText:IE8及以前的浏览器版本支持,但是低版本的火狐42不支持,仅支持textContent,而IE8及以前的浏览器又不支持textContent,高版本的都支持这两个属性.
+    - 兼容性方法:
+    function set(ele,value) {
+        if(typeof ele.innerText == &quot;string&quot;) {
+            ele.innerText = value;
+        }else {
+            ele.textContent = value;
+        }
+    }
+
+createElement(&quot;p&quot;) 创建元素节点
+    - var btn = document.createElement(&quot;input&quot;);
+    - btn.setAttribute(&quot;onclick&quot;, &quot;javascript:alert(&apos;This is a text!&apos;);&quot;); 
+    - body.appendChild(btn);     
+    - IE7 创建表格必须有表头
+
+createTextNode(&quot; &quot;) 创建文本节点
+    -  var te = document.createTextNode(&quot;I Love JavaScript!&quot;);
+    - ele.appendChild(te);
+
+appendChild() 在某节点的子节点后插入节点
+    - 还有剪切功能.
+
+insertBefore() 之前
+    - var otest = document.getElementById(&quot;test&quot;);  
+    - var a= document.createElement(&quot;li&quot;);
+    - a.innerHTML=&quot;PHP&quot;;
+    - otest.insertBefore(a,otest.lastChild);
+    - 还有剪切功能.
+
+removeChild() 删除一个子节点
+    - 从子节点列表中删除某个节点。如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
+    - 1. 删除该节点的内容，先要获取子节点。
+    - 2. 然后使用循环遍历每个子节点。
+    - 3. 使用removeChild()删除节点。
+    - while(content.firstChild) {
+          content.removeChild(content.firstChild);}
+
+replaceChild() 替换一个子节点
+    - 只有父结点才能调用  replaceChild(newnode,oldnode).这个方法.
+        所以，要想替换当前结点的内容或者属性，那么首先得获得父节点，才可以操作，
+        这就是为什么 oldnode.parentNode.replaceChild(newnode,oldnode); 这句代码的写法。。
+    - old.parentNode.replaceChild(new,old); 
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM-API/">DOM ＡＰＩ</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/04/05/API/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="API">
          &nbsp;
         view
     </span>
