@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端-Tag: cookie session localStorage | lhl博客</title>
+  <title>前端-lhl博客</title>
 
   <!-- keywords -->
   
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="lhl博客">
-<meta property="og:url" content="http://yoursite.com/tags/cookie-session-localStorage/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="lhl博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lhl博客">
@@ -185,66 +185,133 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-DOM尺寸操作" class="article article-type-post" itemscope itemprop="blogPost">
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/29/cookie-session-localStorage区别/" class="archive-article-date">
-  	<time datetime="2016-08-29T13:28:23.000Z" itemprop="datePublished">Aug 29</time>
+    <div class="article-meta">
+      <a href="/2015/04/05/DOM尺寸操作/" class="article-date">
+  	<time datetime="2015-04-05T08:54:36.000Z" itemprop="datePublished">2015-04-05</time>
 </a>
-        </div>
-    	 
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/29/cookie-session-localStorage区别/">
-        cookie,session,localStorage区别
+      <a class="article-title" href="/2015/04/05/DOM尺寸操作/">
+        DOM尺寸操作
         
       </a>
     </h1>
   
 
-        <div class="article-info info-on-left">
-          
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="三大家族"><a href="#三大家族" class="headerlink" title="三大家族"></a>三大家族</h2><h3 id="offset-偏移，偏移量"><a href="#offset-偏移，偏移量" class="headerlink" title="offset 偏移，偏移量"></a>offset 偏移，偏移量</h3><pre><code>成员:offsetWidth   offsetHeight  offsetLeft  offsetTop 可获得外联样式,返回数值
+offsetParent    返回该对象距离最近的带有定位的父级        
+</code></pre><ol>
+<li><p>offsetLeft 和 offsetTop 获取元素距离最近的有定位父级元素的偏移量.</p>
+<pre><code>- offsetLeft以元素border左上角为基准;
+- style.left以margin左上角为基准; 仅能获得行内样式;
+</code></pre></li>
+<li><p>offsetHeight和offsetWidth，获取网页内容高度和宽度(包括滚动条等边线，会随窗口的显示大小改变)。</p>
+<pre><code>- offsetHeight = clientHeight(真实宽度+padding值) + 滚动条 + 边框。
+- var w= document.documentElement.offsetWidth || document.body.offsetWidth || 0;
+- var h= document.documentElement.offsetHeight || document.body.offsetHeight || 0;
+</code></pre></li>
+<li><p>类比</p>
+<ul>
+<li>offsetParent    始终是获得的是最近的定位的父级元素，如果没有父级元素没有定位的话，则默认是以body为准。</li>
+<li>parentNode 仅仅是父元素，与定没定位没有关系</li>
+</ul>
+</li>
+<li><p>offsetParent</p>
+<pre><code>- 返回该对象距离最近的带有定位的父级
+</code></pre></li>
+</ol>
+<h3 id="scroll-滚动"><a href="#scroll-滚动" class="headerlink" title="scroll 滚动"></a>scroll 滚动</h3><pre><code>成员:scrollWidth      scrollHeight    scrollLeft    scrollTop    
+</code></pre><ol>
+<li><p>scrollWidth：width+padding</p>
+</li>
+<li><p>scrollHeight:  height+padding(<strong>但是包括内容超出的部分</strong>);</p>
+<p>比较:offsetWidth: width+padding+border;</p>
+</li>
+<li><p>scrollLeft:  页面向左滚动或是卷去的部分</p>
+<p>=window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0</p>
+</li>
+<li><p>scrollTop:  页面向上滚动或是卷去的部分 ;</p>
+<p>=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0</p>
+<ul>
+<li>offsetTop、offsetLeft、</li>
+<li>设置或获取位于给定对象左边界与窗口中目前可见内容的边之间的距离</li>
+</ul>
+</li>
+</ol>
+<h3 id="client-原意客户端-在这里可视区"><a href="#client-原意客户端-在这里可视区" class="headerlink" title="client 原意客户端  在这里可视区"></a>client 原意客户端  在这里可视区</h3><pre><code>成员:clientWidth         clientHeight    clientLeft      clientTop
+</code></pre><ol>
+<li><p>clientWidth:width+padding(获得元素的可视尺寸,无兼容问题)</p>
+<p> 获取浏览器窗口的内部宽度:window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 0</p>
+<p> window.screen.width: 返回电脑的分辨率,和浏览器没有关系    </p>
+</li>
+<li><p>clientHeight:height+padding</p>
+<p> 获取浏览器窗口的内部高度:window.innerHeight ||document.documentElement.clientHeight || document.body.clientHeight || 0</p>
+</li>
+<li><p>clientLeft:元素左侧<strong>边框</strong>的宽度</p>
+</li>
+<li><p>clientTop:元素顶部<strong>边框</strong>的宽度</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie-session-localStorage/">cookie session localStorage</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM-三大家族/">ＤＯＭ 三大家族</a></li></ul>
 	</div>
 
-          
+      
 
-          
-            
+      
+        
 <div class="counter-tag counter">
-    <span id="/2016/08/29/cookie-session-localStorage区别/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="cookie,session,localStorage区别">
+    <span id="/2015/04/05/DOM尺寸操作/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="DOM尺寸操作">
          &nbsp;
         view
     </span>
 </div>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      
+      <div class="clearfix"></div>
+    </div>
+      
     
+  </div>
+  
+</article>
 
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -268,10 +335,10 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

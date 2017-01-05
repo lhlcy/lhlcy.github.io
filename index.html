@@ -121,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/c33-动画-样式/" style="font-size: 10px;">c33 动画  样式</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/html5-标签/" style="font-size: 10px;">html5 标签</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a>
+						<a href="/tags/DOM-API/" style="font-size: 10px;">DOM ＡＰＩ</a> <a href="/tags/ajax请求简单认识/" style="font-size: 10px;">ajax请求简单认识</a> <a href="/tags/c33-动画-样式/" style="font-size: 10px;">c33 动画  样式</a> <a href="/tags/cookie-session-localStorage/" style="font-size: 10px;">cookie session localStorage</a> <a href="/tags/gulp-自动化打包工具/" style="font-size: 10px;">gulp 自动化打包工具</a> <a href="/tags/html5-标签/" style="font-size: 10px;">html5 标签</a> <a href="/tags/js-javascript-事件/" style="font-size: 10px;">js javascript 事件</a> <a href="/tags/响应式开发，Bootstrap/" style="font-size: 10px;">响应式开发，Bootstrap</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/页面优化看法/" style="font-size: 10px;">页面优化看法</a> <a href="/tags/DOM-三大家族/" style="font-size: 10px;">ＤＯＭ 三大家族</a>
 					</div>
 				</section>
 				
@@ -184,6 +184,222 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="dom-API" class="article article-type-dom" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/05/API/" class="article-date">
+  	<time datetime="2017-01-05T08:54:56.000Z" itemprop="datePublished">2017-01-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/05/API/">
+        API
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h1><p>##节点##</p>
+<pre><code>元素节点 标签
+
+属性节点 元素属性
+
+文本节点 元素中内容
+
+注释节点    注释
+</code></pre><p>##节点属性##</p>
+<pre><code>nodeName
+    - 元素节点    与标签名相同
+    - 属性节点    属性的名称
+    - 文本节点    #text
+    - 文档节点    #document
+    - 注释节点
+
+nodeType
+    - 元素    1
+    - 属性    2
+    - 文本    3
+    - 注释    8
+    - 文档    9
+    - 文档类型节点    10
+    - 文档片段节点    11
+
+nodeValue
+    - 元素节点    undefined或null
+    - 文本节点    文本自身
+    - 属性节点    属性的值
+</code></pre><p>##获取节点##</p>
+<pre><code>getElementById 根据Id 得到一个元素
+
+getElementsByClassName 根据类名 得到一个数组  ie6/7/8有兼容性问题
+    封装兼容性思路:取出所有的盒子,并判断类名
+var dom = document.body.getElementsByTagName(&quot;*&quot;);
+
+getElementsByName name属性
+
+getElementsByTagName 根据标签 得到一个数组
+
+其他:
+document.head
+document.body
+document.title  浏览器标题处显示的内容
+document.documentElement(html根节点);
+</code></pre><h3 id="document的属性"><a href="#document的属性" class="headerlink" title="document的属性"></a>document的属性</h3><pre><code>document.title
+document.bgColor
+document.linkColor
+document.alinkColor
+document.vlinkColor
+document.URL
+document.fileCreatedDate
+document.fileModifiedDate
+document.fileSize
+document.cookie
+document.charset
+</code></pre><p>##遍历节点方法##</p>
+<pre><code>children    不是标准的DOM属性,但是得到所有浏览器支持,而且只会获得标签节点
+
+childNodes  是标准的DOM属性,返回一个数组
+    - 高版本浏览器会计算空白文本节点
+
+firstChild    第一个节点
+
+firstElementChild    第一个节点
+
+lastChild    最后一个节点
+
+lastElementChild  最后一个节点
+
+parentNode 返回父节点
+
+nextSibling   下一个兄弟节点     会获得除标签以外的文本节点,IE8及之前的所有浏览器都支持,
+    低版本IE会忽略空白文本节点
+    - 需排除空白文本节点    属性值为3
+    - x.nodeType != 1
+    - x &amp;&amp; x.nodeType != 1
+
+nextElementSibling        IE不支持,会报错 只会获得元素节点
+
+    ?_? var aim = d.nextElementSibling || d.nextSibling;返回了一些奇怪的东西!
+
+previousSibling  上一个元素
+
+previousElementSibling    上一个元素   IE不支持
+</code></pre><p>##DOM操作## </p>
+<pre><code>    - 三步：创建、赋值、插入。
+    - 操作是在子节点位置
+
+obj.style的方式:
+getAttribute() 获得元素节点的属性值
+setAttribute() 设置元素节点的属性值
+
+添加多个属性的方式:添加类名
+
+获取某个属性的值: window.getComputedStyle(obj,null)[attr];
+    obj.currentStyle[attr] IE支持的
+
+- inputs[i].value = &quot;a&quot;+i;                    // 属性对象方式, 写入内存
+
+- inputs[i].setAttribute(&quot;value&quot;,&quot;a&quot;+i);        // 元素对象方式, 写入文件
+- inputs[i].getAttribute(&quot;value&quot;)
+
+innerHTML:无兼容性问题,赋值的innerHTML里面如果有标签,会解析
+
+innerText:IE8及以前的浏览器版本支持,但是低版本的火狐42不支持,仅支持textContent,而IE8及以前的浏览器又不支持textContent,高版本的都支持这两个属性.
+    - 兼容性方法:
+    function set(ele,value) {
+        if(typeof ele.innerText == &quot;string&quot;) {
+            ele.innerText = value;
+        }else {
+            ele.textContent = value;
+        }
+    }
+
+createElement(&quot;p&quot;) 创建元素节点
+    - var btn = document.createElement(&quot;input&quot;);
+    - btn.setAttribute(&quot;onclick&quot;, &quot;javascript:alert(&apos;This is a text!&apos;);&quot;); 
+    - body.appendChild(btn);     
+    - IE7 创建表格必须有表头
+
+createTextNode(&quot; &quot;) 创建文本节点
+    -  var te = document.createTextNode(&quot;I Love JavaScript!&quot;);
+    - ele.appendChild(te);
+
+appendChild() 在某节点的子节点后插入节点
+    - 还有剪切功能.
+
+insertBefore() 之前
+    - var otest = document.getElementById(&quot;test&quot;);  
+    - var a= document.createElement(&quot;li&quot;);
+    - a.innerHTML=&quot;PHP&quot;;
+    - otest.insertBefore(a,otest.lastChild);
+    - 还有剪切功能.
+
+removeChild() 删除一个子节点
+    - 从子节点列表中删除某个节点。如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
+    - 1. 删除该节点的内容，先要获取子节点。
+    - 2. 然后使用循环遍历每个子节点。
+    - 3. 使用removeChild()删除节点。
+    - while(content.firstChild) {
+          content.removeChild(content.firstChild);}
+
+replaceChild() 替换一个子节点
+    - 只有父结点才能调用  replaceChild(newnode,oldnode).这个方法.
+        所以，要想替换当前结点的内容或者属性，那么首先得获得父节点，才可以操作，
+        这就是为什么 oldnode.parentNode.replaceChild(newnode,oldnode); 这句代码的写法。。
+    - old.parentNode.replaceChild(new,old); 
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM-API/">DOM ＡＰＩ</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2017/01/05/API/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="API">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1917,6 +2133,250 @@ SVG素材
 
 
   
+    <article id="post-DOM事件操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/05/DOM事件操作/" class="article-date">
+  	<time datetime="2015-06-05T02:53:19.000Z" itemprop="datePublished">2015-06-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/05/DOM事件操作/">
+        js事件操作
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Window事件"><a href="#Window事件" class="headerlink" title="Window事件"></a>Window事件</h3><pre><code>onload               页面加载完毕的事件
+onscroll            页面滚动时候触发的事件
+onresize            页面大小改变的时候时候触发的事件
+</code></pre><p><strong>DOM Ready</strong><br>    在页面的DOM树创建完成后(也就是HTML解析第一步完成)即触发,而无需等待其他资源的加载.</p>
+<pre><code>浏览器渲染引擎的基本渲染流程:
+
+    1. 解析HTML,构建DOM树(构建DOM节点);
+    2. 构建渲染树(解析样式信息);
+    3. 布局渲染树(布局DOM节点);        
+    4. 绘制渲染树(绘制DOM节点);
+
+DOMContentLoaded
+    - 支持DOMContentLoaded事件的, 就用该事件
+    - 不支持的, 就用著名的Hack兼容方式, 原理通过IE中的document.documentElement.doScroll(&quot;left&quot;)来判断DOM数是否创建完毕
+    - 摘自DOM事件探秘-慕课网
+</code></pre><h3 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h3><pre><code>onclick                鼠标的单击事件
+ondblclick            鼠标的双击事件
+onmouseup            鼠标的弹起事件
+
+onmouseover            鼠标移入的事件
+onmousemove            鼠标移动的事件
+onmouseout            鼠标移出的事件
+
+onkeydown            键盘上的按键按下的时候就会触发                一般输入框和文本框使用
+onkeyup                键盘上的按键按下,并抬起来的时候才会触发        一般输入框和文本框使用
+
+onfocus                获得焦点的事件
+onblur                失去焦点的事件
+</code></pre><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><pre><code>1. 事件源         x盒子
+2. 事件             点击
+3. 事件处理程序     关闭广告
+
+事件源.事件 = function() {事件处理函数}
+
+书写事件位置:
+
+1. 行内    标签里面
+2. 内嵌    script里面    函数调用等
+</code></pre><h4 id="注册事件方式"><a href="#注册事件方式" class="headerlink" title="注册事件方式"></a>注册事件方式</h4><p><strong>On</strong>的方式只能对同一标签对象注册一个事件，如果注册多个，后面的会覆盖前面的事件，<br>如果想对某个标签对象注册多个事件的话，可以用<strong>addEventListener</strong></p>
+<p>obj.addEventListener(type,listener,false); false为支持冒泡;</p>
+<pre><code>但是IE8及之前的浏览器仅支持attachEvent
+</code></pre><p>obj.attachEvent(“on”+type,listener); 需加”on”;</p>
+<pre><code>/**
+ * 封装了兼容版本的注册事件的方法
+ * @param element
+ * @param type
+ * @param listener
+ */
+function addEventLister(element,type,listener){
+    // 能力检测
+    if(element.addEventListener){
+        element.addEventListener(type,listener,false);
+
+    }else if(element.attachEvent){
+        element.attachEvent(&quot;on&quot;+type,listener);
+
+    }else {
+        element[&quot;on&quot;+type] = listener;
+    }
+}
+</code></pre><p><strong>事件冒泡</strong></p>
+<pre><code>当一个元素上的事件被触发的时候，比如说鼠标点击了一个按钮，同样的事件将会在那个元素的所有祖先元素中被触发。
+这一过程被称为事件冒泡；这个事件从原始元素开始一直冒泡到DOM树的最上层。
+
+事件委托:
+应用:本来该自己做的事情,我们可以让另一个对象(父级对象)帮我们做.
+    比如:在点击任何子元素,都要触发同样事件的情况下,就可以给父级设置事件!    
+
+E 6.0: 
+div -&gt; body -&gt; html -&gt; document
+其他浏览器: 
+div -&gt; body -&gt; html -&gt; document -&gt; window
+
+以下事件不冒泡：blur、focus、load、unload
+
+阻止冒泡的方法
+    w3c的方法是event.stopPropagation() 
+    IE则是使用event.cancelBubble = true 
+    兼容:
+        if(event &amp;&amp; event.stopPropagation) {         
+          event.stopPropagation();  //  w3c 标准
+          } else {
+          event.cancelBubble = true;  // ie 678  ie浏览器
+        }
+</code></pre><p><strong>事件对象 (event)</strong></p>
+<pre><code>src.onclick = function(event) {}
+在触发事件的时候, 会产生一个事件对象event, 这个对象中包含着所有与事件相关的信息. 所有浏览器都支持event对象, 但方式不同.
+
+IE8以下问题：
+1. attach回调函数this指向window，可以通过event获得事件对象
+2. on添加事件时，回调中this指向undefined；需通过window.event获得
+
+比如鼠标操作的时候, 会添加鼠标位置的相关信息到event中.
+
+兼容处理:var event = event || window.event;
+</code></pre><p><strong>event 常见属性</strong></p>
+<pre><code>- 属性        作用
+
+- clientX    光标相对与可视区域基准点(固定定位)的位置    
+- clientY    光标相对与可视区域基准点(固定定位)的位置    
+
+- data    返回拖拽对象的URL字符串（dragDrop）
+- width    该窗口或框架的高度
+- height    该窗口或框架的高度
+
+- pageX    光标相对与文档基准点(绝对定位)的位置（ie无）
+- pageY    光标相对与文档基准点(绝对定位)的位置（ie无）
+    兼容:
+    - var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+    - var pageY = event.pageY || event.clientY+document.documentElement.scrollTop;
+
+- screenX    光标相对于该屏幕的水平位置
+- screenY    光标相对于该屏幕的垂直位置
+
+- target    该事件被传送到的对象
+    - target = event.target || event.srcElement;
+    - 兼容性: targetId=event.target ? event.target.id : event.srcElement.id;
+
+- currentTarget 当前执行阶段的对象
+- eventPhase        判断当前对象处于哪个执行阶段    
+
+- type    事件的类型 click/move/over等
+- preventDefault        阻止默认行为 IE: event.returnValue = false;
+</code></pre><p><strong>防止拖动选择</strong></p>
+<pre><code>正常时按下鼠标然后拖拽可以选择文字的。 
+解决方式:清除选中的内容 
+window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+</code></pre><p><strong>计时器</strong></p>
+<pre><code>Js是单线程执行的,某一段代码执行的时候,所有后续的任务必须等待,形成一个队列,常称为&quot;阻塞式执行&quot;.
+计时器是在合适的时间将代码插入队列,但不保证执行.
+
+var that = this; 经常用到
+
+setTimeout(function,delay); 返回数字
+    延迟执行,
+
+setInterval(function,delay);
+    循环执行,
+
+clearTimeout(num);
+clearInterval(num);
+
+seInterval是排队执行的
+
+    假如 间隔时间是1秒, 而执行的程序时间是2秒 上次没有执行完的代码会排队,上一次执行完下一次就立即执行,这样实际执行间隔时间为2秒.
+
+setTimeout 延迟时间为1秒执行,要执行的代码需要2秒来执行,那这段代码上一次与下一次的执行时间为3秒.
+
+定时器特殊:
+    setTimeout(goIndexPage,1000);
+    var count = 5;
+    demo.innerHTML = &quot;&lt;a href=&apos;http://www..&apos;&gt;本页面将在&quot;+count+&quot;秒钟之后跳转页面&lt;/a&gt;&quot;;
+
+    递归方式避免setInterval的时间混乱
+    function goIndexPage() {
+        count--;
+        if(count&lt;=0) {
+            window.location.href=&quot;&quot;;
+        }else{
+            setTimeout(goIndexPage,1000);
+            setTimeout(arguments.callee,1000); 更直接更好
+        }
+    }
+
+alert(1);
+setTimeout(&quot;alert(2)&quot;,0);
+alert(3);
+1 3 2; 单线程 阻塞式 插入队列,但不保证执行.
+
+缓动动画:step = (target - leader)/10;
+        step = step&gt;0 ? Math.ceil(step) : Math.floor(step);
+        leader += step;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-javascript-事件/">js javascript 事件</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2015/06/05/DOM事件操作/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="js事件操作">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
